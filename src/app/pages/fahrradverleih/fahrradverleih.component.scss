@@ -1,0 +1,51 @@
+@import '../../../styles/styles.scss';
+
+.main-container{
+    min-height: calc(100vh - 120px);
+    padding-top: 120px;
+    .banner{
+        height: 550px;
+        background-color: $banner-background-color;
+        font-family: 'montserrat-bold';
+        font-size: 100px;
+        color: $secondary-color;
+        @include flex (column,center,center);
+        .text1{
+           padding-right: 15%;
+        }
+        .text2{
+            padding-left: 7%;
+         }
+    }
+    .sub-section{
+        @include flex(column,center,center);
+        padding: 200px 0px;
+        background-color: $page-background-color;
+        .sections{
+            @include content-width;
+            @include flex(row,center,center);
+            img{
+                width: 635px;
+                height: 425px;
+            }
+            .text-section{
+                @include flex(column,start,start);
+                padding: 85px;
+                gap: 25px;
+            }
+            .headline{
+                font-size: 20px;
+                font-family: "montserrat-bold";
+            }
+            .description{
+                font-size: 15px;
+                font-family: "montserrat-regular";
+            }
+    
+        }
+        .reverse-section{
+            @include flex(row-reverse,center,center);
+        }
+    }
+
+}

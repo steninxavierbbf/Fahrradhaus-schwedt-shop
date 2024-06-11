@@ -1,0 +1,65 @@
+@import '../../styles/styles.scss';
+
+nav{
+    height: 120px;
+    @include flex(row,center,center);
+    z-index: 3;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: $secondary-color;
+    width: 100%;
+    font-size: 13px;
+    font-family: "montserrat-bold";
+    .main-container{
+     @include content-width;
+     @include flex(row,space-between,center);
+     z-index: 3;
+     .active{
+      color: $brand-color;
+    }
+     .menuitems-logo{
+        ul{
+            @include flex(row,center,center);
+            gap: 55px;
+            margin: 0px;
+            padding: 0px;
+            li{
+              list-style-type: none;
+              cursor: pointer;
+            
+              img{
+              height: 196px;
+              width: 196px;
+              top: 50%;
+              transform: translate(0%, 30%);
+              border: 15px solid white;
+              border-radius: 50%;
+              object-fit: contain;
+
+              }
+              .smallerLogo{
+                height: 80px;
+                width: 80px;
+                transform: translate(75%, 75%);
+                border: none;
+                object-fit: contain;
+              }
+              &:hover{
+                color: $brand-color
+              }
+            }
+        }
+
+     }
+     .icons{
+        @include flex(row,center,center);
+        gap: 20px;
+        img{
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+        }
+     }
+    }
+}

@@ -1,0 +1,17 @@
+<div class="main-container">
+    <div class="banner">
+        <div class="text1">Fahrräder</div>
+        <div class="text2">ausleihen</div>
+    </div>
+    <div class="sub-section">
+    <div class="sections" *ngFor="let item of descriptions let i =index"  [class.reverse-section]="i % 2 !== 0">
+          <img src={{item.image}} alt="">
+          <div class="text-section">
+          <div class="headline">{{item.details.title}}</div>
+          <div class="description" *ngFor="let description of item.details.description">
+            {{description}}
+          </div>
+        </div>         
+        </div>
+    </div>
+</div>

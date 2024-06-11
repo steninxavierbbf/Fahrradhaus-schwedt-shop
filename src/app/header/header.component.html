@@ -1,0 +1,19 @@
+<nav>
+    <div class="main-container"> 
+        <div class="menuitems-logo">
+             <ul>
+                <li [routerLink]="['']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">HOME</li>
+                <li [routerLink]="['fahrradverleih']" routerLinkActive="active">FAHRRADVERLEIH</li>
+                <li [routerLink]="['service-leistungen']" routerLinkActive="active">SERVICE & LEISTUNGEN</li>
+                <li style="height: 196px;width: 196px;" [routerLink]="['']" routerLinkActive="active"> <img src="assets/images/radprofis_logo.png" alt="radprofis_logo" [class.smallerLogo]="isScrolled"> </li>
+                <li [routerLink]="['uber-uns']" routerLinkActive="active">ÜBER UNS</li>
+                <li [routerLink]="['shop']" routerLinkActive="active">SHOP</li>
+                <li [routerLink]="['termin-buchen']" routerLinkActive="active">TERMIN BUCHEN</li>
+             </ul>
+        </div>
+        <div class="icons">
+            <img src="assets/icons/shopping_cart_icon.png" alt="cart">
+            <img src="assets/icons/search_icon.png" alt="search">
+        </div>
+    </div>
+</nav>

@@ -1,0 +1,9 @@
+@mixin content-width{
+    width: calc((1280px*100%) / 1920px) ;
+}
+@mixin flex($flex-direction,$justify,$align){
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+    flex-direction: $flex-direction;
+}

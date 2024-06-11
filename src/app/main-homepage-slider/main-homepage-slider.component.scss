@@ -1,0 +1,102 @@
+@import '../../styles/styles.scss';
+
+@mixin slider-text-property{
+    font-size: 150px;
+    color: $secondary-color;
+    font-family: "montserrat-bold";
+    position: absolute;
+}
+@mixin arrow{
+    height: 57px;
+    width: 57px;
+    background-color: $secondary-color;
+    color: #D9D9D9;
+    border-radius: 50%;
+    text-align: center ;
+    @include flex(row,center,center);
+    font-family: "montserrat-regular";
+    font-size: 40px;
+}
+.main-container{   
+    width: 100%;
+    margin: 0;
+    height: calc(100vh - 120px);
+    background-color: $photo-background-color ;
+    position: relative;
+    .slider-images{
+        .slider{
+            .slider1{
+                @include flex(row,center,start);
+               transform: translate(0%, 35%);
+               height: 100%;
+                img {
+                    object-fit: contain;
+                    height: 550px;
+                    position: relative;
+                    z-index: 1;
+                }
+                .pictureSlider{
+                    object-fit: cover;
+                    height: calc(100vh - 120px);
+                    width: 100%;
+                    position: relative;
+                    z-index: 1;
+                    transform: translate(0%, -35%);
+                }
+
+                .text1{
+                   @include slider-text-property;
+                   transform: translate(-31%, -40%);
+                   z-index: 0;
+                
+                }
+                .text2{
+                    @include slider-text-property;
+                    transform: translate(0%, 50%);
+                    z-index: 2;
+                }
+                button{
+                    height: 62px;
+                    width: 202px;
+                    z-index: 3;
+                    bottom: -10%;
+                    text-align: center;
+                    border: 3px solid $secondary-color;
+                    background-color: $photo-background-color;
+                    color: $secondary-color;
+                    font-size: 18px;
+                    font-family: "montserrat-bold";
+                    position: absolute;
+                    cursor: pointer;
+                    border-radius: 50px;
+                    &:hover{
+                        background-color: $secondary-color;
+                        color: $photo-background-color;
+                        transform: scale(1.1)
+                    }
+                }
+
+            }
+            
+        }
+
+    }
+            .arrow-button-left{
+             @include arrow;
+             z-index: 2;
+             position: absolute;
+             top: 50%;
+             transform: translate(0%, 50%);
+             left: calc((110px * 100%) / 1920px);
+             cursor: pointer;
+            }
+            .arrow-button-right{
+                @include arrow;
+                z-index: 2;
+                position: absolute;
+                right: calc((110px * 100%) / 1920px);
+                top: 50%;
+                transform: translate(0%, 50%);
+                cursor: pointer;
+               }
+            }

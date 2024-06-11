@@ -1,0 +1,71 @@
+@import '../../styles/styles.scss';
+
+.main-container{
+    padding-bottom: 100px
+;    @include flex(row,center,center);
+    .content-section{
+        background-color: $secondary-color;
+        height: 466px;
+        color: $footer-background;
+     display: grid;
+     grid-template-columns: repeat(10,1fr);
+        @include content-width;
+        .image-section{
+            background-color: $photo-background-color;
+            height: 100%;
+            img{
+                width: 478px;
+                height: 300px;
+                object-fit: contain;
+            }
+            grid-column-start: 1;
+            grid-column-end: 6;
+            @include flex(row,center,center)
+        }
+        .texts-section{
+            grid-column-start:7;
+            grid-column-end: 10;
+            @include flex(row,center,center);
+            .smaller-headline{
+               font-size: 16px;
+               font-family: 'montserrat-bold';
+            }
+            .bigger-headline{
+                font-size: 45px;
+                font-family: 'montserrat-regular';
+                padding-top: 20px;            }
+            ul{
+                @include flex(column,start,start);
+                gap: 10px;
+                margin: 0px;
+                padding: 45px 0px;
+                li{
+                 list-style-type: none;
+                 font-size: 15px;
+                 font-family: 'montserrat-regular';
+                }
+            }
+            .button-section{
+                @include flex(row,start ,center);
+                gap: 10px;
+                .link{
+                    font-size: 20px;
+                    font-family: 'montserrat-bold';
+                    color: $brand-color;
+                    cursor: pointer;
+                }
+                img{
+                    height: 23px;
+                    width: 23px;
+                    opacity: 0;
+                    transition: opacity 0.3s ease-in-out;
+                }
+                .link:hover + img{
+                    opacity: 1;
+                }
+                
+            }
+        }
+    }
+   
+}

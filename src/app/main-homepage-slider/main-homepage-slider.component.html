@@ -1,0 +1,16 @@
+<div class="main-container">
+    <div class="slider-images">
+        <div class="slider">
+            <div class="slider1">
+                <img src={{getCurrentSliderUrl()}} alt="slider" [class.pictureSlider]="currentIndex === 0">
+                <div class="text1" *ngIf="currentIndex===1">Fahrrad</div>
+                <div class="text2" *ngIf="currentIndex===1">des Monats</div>
+                <button *ngIf="currentIndex===1" >SHOP</button>
+            </div>
+
+        </div>
+
+    </div>
+        <div class="arrow-button-left" (click)="prevImage()"><</div>
+        <div class="arrow-button-right" (click)="nextImage()">></div>
+</div>

@@ -1,0 +1,67 @@
+@import '../../styles/styles.scss';
+.main-container{
+    padding-bottom: 140px;
+    color: $footer-background;
+    @include flex(row,center,center);
+  .content-section{
+    @include flex(column,center,center);
+    @include content-width;
+    overflow: hidden;
+    gap: 50px;
+    padding: 10px 0px;
+    .headline{
+    font-size: 45px;
+    font-family: 'montserrat-bold';
+    }
+    .slider{
+        @include flex(row,center,center);
+        gap: 20px;
+        width: auto;
+        min-height: 34vh;
+        .picture{
+            height: 412px;
+            width: 471px;
+            background-color: $secondary-color;
+            @include flex(column,center,center);
+            gap: 20px;
+          
+            img{
+                height: 240px;
+                width: 382px;
+                padding: 20px;
+                object-fit: contain;
+                transition: all 0.3s ease-in-out;
+                cursor: pointer;
+                &:hover{
+                    transform: scale(1.1); 
+                }
+
+            }
+            .light-heading{
+                font-size: 20px;
+               font-family: 'montserrat-regular';
+            }
+            .main-heading{
+              font-size: 40px;
+              font-family: 'montserrat-regular';  
+            }
+        }
+    }
+    button{
+        font-size: 13px;
+        font-family: 'montserrat-bold';
+        background-color: $brand-color;
+        border: none;
+        color: $secondary-color;
+        width: 170px;
+        height: 54px;
+        border-radius: 50px;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+
+        &:hover{
+            transform: scale(1.1); 
+        }
+    }
+  }
+}

@@ -1,0 +1,55 @@
+@import '../../styles/styles.scss';
+
+footer{
+    height: 448px;
+    color: $secondary-color;
+    background-color: $footer-background;
+    @include flex(row,center,center);
+    .main-container{
+      @include content-width;
+      @include flex(column,space-between,normal);
+      gap: 30px;
+      .section1{
+   @include flex(row,space-between,start);
+        img{
+            object-fit: contain;
+            height: 188px;
+            width: 188px;
+        }
+
+            ul{
+                @include flex(column,start,start);
+                gap:20px ;
+                span{
+                    font-size: 20px;
+                    font-family: "montserrat-bold";
+                }
+                li{
+                    list-style-type: none;
+                    font-size: 13px;
+                    font-family: "montserrat-regular";
+                    cursor: pointer;
+                }
+            }
+        }
+      }
+      .line{
+        height: 2px;
+        width: 100%;
+        background-color: $secondary-color;
+      }
+      .section2{
+        @include flex (row,space-between,end);
+        font-size: 13px;
+        font-family: "montserrat-regular";
+        .right{
+            @include flex(row,center,center);
+             gap: 5px;
+            li{
+                list-style-type: none;
+                cursor: pointer;
+            }
+        }
+
+      }
+    }

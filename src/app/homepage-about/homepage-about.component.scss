@@ -1,0 +1,55 @@
+@import '../../styles/styles.scss';
+.main-container{
+    @include flex(row,center,center);
+    padding-bottom: 140px;
+    .content-section{
+      @include flex(row,space-between,center);
+      gap: 130px;
+      @include content-width;
+      img{
+     height: 470px;
+     width: 624px;
+     object-fit: cover;
+      }
+      .description{
+        @include flex(column,center,start);
+        color: $footer-background;
+          .headline{
+            font-size: 45px;
+            font-family: 'montserrat-bold';
+            padding-bottom: 60px;
+          }
+          .inner-text{
+            font-size: 15px;
+            font-family: 'montserrat-regular';
+
+          }
+          div{
+            padding-top: 30px;
+            font-size: 15px;
+            font-family: 'montserrat-regular';
+        }
+          .sub-text{
+            font-family: 'montserrat-bold';
+            padding-top: 50px;
+            @include flex(row,center ,center);
+            gap: 10px;
+            .link{
+                font-size: 20px;
+                font-family: 'montserrat-bold';
+                cursor: pointer;
+            }
+            img{
+                height: 23px;
+                width: 23px;
+                opacity: 0;
+                transition: opacity 0.3s ease-in-out;
+                padding-top: 10%;
+            }
+            .link:hover + img{
+                opacity: 1;
+            }
+          }
+      }
+    }
+}
