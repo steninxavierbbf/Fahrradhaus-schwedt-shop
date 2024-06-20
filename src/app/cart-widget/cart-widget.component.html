@@ -1,0 +1,27 @@
+<div class="main-container">
+    <div class="product">
+        <div class="full-product" *ngFor="let bike of cartBasketItems">
+            <div class="section" > 
+                <div class="image">
+                <img src={{bike.image}} alt={{bike.name}}>
+            </div>
+            <div class="bike-details">
+                    <div class="bike-name">{{bike.name}}</div>
+                <div class="counter-section">
+                    <div class="number">{{bike.quantity}} Stück</div>
+                    <div class="counter"><p>-</p><p>+</p></div>
+                </div>
+                <div class="price">{{bike.price}}</div>
+            </div>
+        </div>
+        <div class="line"></div>
+        </div>
+    
+    </div>
+   
+    <div class="sum">
+        <div class="text">Gesamtsumme</div>
+        <div class="price">3.149 EUR</div>
+    </div>
+    <button routerLink="/checkout">Zur Kasse</button>
+</div>

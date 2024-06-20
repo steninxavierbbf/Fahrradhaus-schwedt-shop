@@ -1,13 +1,22 @@
+
 <div class="main-container">
-       <div class="content-section">
-        <div class="headline">UNSERE TOPSELLER</div>
-        <div class="slider">
+    <div class="title">UNSERE TOPSELLER</div>
+    <div class="item-slider">
+        <div class="left-arrow" (click)="slide(-800)" [class.is-disabled-hide]="scrollX < 1">
+            <img src="assets/icons/left-arrow.png" alt="left-arrow">
+        </div>
+        <div class="item-container" #scrl (scroll)="scrollCheck()">
             <div class="picture" *ngFor="let image of images">
                 <img src={{image}} alt="bike1">
                 <div class="light-heading">E-TREKKING</div>
                 <div class="main-heading">BASEL 2.0</div>
             </div>
         </div>
-        <button>ZUM ONLINE-SHOP</button>
-       </div>
+        <div (click)="slide(800)" [class.is-disabled-hide]="scrollEnd" class="right-arrow">
+            
+            <img src="assets/icons/right-arrow-smaller.png" alt="left-arrow">
+
+        </div>
+    </div>
+    <button [routerLink]="['shop']">ZUM ONLINE-SHOP</button>
 </div>

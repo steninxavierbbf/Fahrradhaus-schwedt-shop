@@ -8,8 +8,7 @@
           <img src={{item.image}} alt="">
           <div class="text-section">
           <div class="headline">{{item.details.title}}</div>
-          <div class="description" *ngFor="let description of item.details.description">
-            {{description}}
+          <div class="description" *ngFor="let description of item.details.description" [innerHTML]="description">
           </div>
         </div>         
         </div>

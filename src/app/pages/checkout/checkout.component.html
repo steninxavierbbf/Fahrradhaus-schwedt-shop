@@ -1,0 +1,129 @@
+
+<div class="main-container">
+    <div class="sub-container">
+        <div class="container-content">
+            <div class="back-link" (click)="goBackToLastPage()">
+                Einkaufen fortsetzen
+            </div>
+            <div class="full-section">
+            <div class="order-details">
+                
+                <div class="payment-details">
+                 <div class="block1">
+                    <div class="left">
+                        <div class="circle" *ngIf="!openPaymentOption">1</div>
+                        <img src="assets/icons/tick.png" alt="tick" *ngIf="openPaymentOption">
+                        <div class="text">VERSAND</div>
+                    </div>
+                    <div class="right">
+                        <div class="delivery">Versand nach:</div>
+                        <div class="place">Deutschland</div>
+                        <div class="arrow-down"><img src="assets/icons/down-arrow.png" alt="down-arrow"></div>
+                    </div>
+                 </div>
+                 <div class="information-filled" *ngIf="openPaymentOption">
+                    <div class="pinformation">
+                        <div class="headline">Personal Information</div>
+                        <div class="data-section">{{paymentSection.email}} , {{paymentSection.phone}}</div>
+                    </div>
+                    <div class="address-section">
+                        <div class="headline">Address</div>
+                        <div class="data-section">{{paymentSection.address}} , {{paymentSection.pin}} , {{paymentSection.place}}</div>
+                    </div>
+                 </div>
+                 <div class="block2" *ngIf="!openPaymentOption">
+                    <form (ngSubmit)="paymentDetails()" #paymentform="ngForm">
+                        <div class="group">
+                            <div class="input-section">
+                                <label for="">E-Mail *</label>
+                                <input type="email" placeholder="Ihre E-Mail Addresse" 
+                                [(ngModel)]="paymentSection.email" email="true" name="email" (input)="valueSection($event)">
+                                
+                            </div>
+                          
+                             <div class="input-section">
+                                <label for="">Telefonnummer *</label>
+                                <input type="tel" placeholder="Ihre Telefonnummer" 
+                                [(ngModel)]="paymentSection.phone" name="phone">
+                             </div>
+                        </div>
+                        <div class="invalid" *ngIf="!emailCheck">*Email is not valid</div>
+                         <div class="input-section">
+                            <label for="">Vor- und Zuname *</label>
+                            <input type="text" placeholder="Ihre Name" 
+                            [(ngModel)]="paymentSection.name" name="name">
+                         </div>
+                         <div class="input-section">
+                            <label for="">Addresse *</label>
+                            <input type="text" placeholder="Geben sie Ihre adresse ein"
+                            [(ngModel)]="paymentSection.address"
+                            name="address">
+                         </div>
+                         <div class="group">
+                            <div class="input-section">
+                                <label for="">PLZ *</label>
+                                <input type="tel" placeholder="Geben Sie Ihre PLZ ein" 
+                                [(ngModel)]="paymentSection.pin" name="pin">
+                             </div>
+                             <div class="input-section">
+                                <label for="">Stadt *</label>
+                                <input type="text" placeholder="Geben Sie Ihre Stadt ein"
+                                [(ngModel)]="paymentSection.place" name="place">
+                             </div> 
+                         </div>
+                         <div class="error-message" *ngIf="fillForm">*Fill all fields</div>
+                         <div class="button-section">
+                            <button type="submit">Zur Zahlung</button>
+                         </div>
+                    </form>
+                 </div>
+                 <div class="line"></div>
+           
+                 <div class="payment-option">
+
+                 </div>
+                </div>
+                <div class="payment-options" [class.filled]="openPaymentOption">
+                    <app-payment-options [option]="openPaymentOption"></app-payment-options>
+                </div>
+
+            </div>
+            <div class="ordered-products">
+                <div class="main-container-bike-details">
+                    <div class="ordered-items" *ngFor="let item of orderedItems">
+<div class="section">
+<div class="image">
+    <img src={{item.image}} alt={{item.name}}>
+</div>
+<div class="bike-details">
+    <div class="bike-name">{{item.name}}</div>
+    <div class="counter-section">
+        <div class="number">{{item.quantity}} Stück</div>
+        <div class="counter"><p><img src="assets/icons/minus.png" alt="minus"></p><p><img src="assets/icons/plus.png" alt=""></p></div>
+    </div>
+    <div class="price">{{item.price}}</div>
+</div>
+</div>
+<div class="line"></div>
+                    </div>
+                    <div class="price-section">
+                        <div class="price-details">
+                            <div class="text">Zwischensumme</div>
+                            <div class="price">3.149 EUR</div>
+                        </div>
+                        <div class="price-details">
+                            <div class="text">Versand</div>
+                            <div class="price">Kostenlos</div>
+                        </div>
+                        <div class="price-details">
+                            <div class="text">Gesamt</div>
+                            <div class="price">3.149 EUR</div>
+                        </div>
+                    </div>
+                   
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,22 @@
+.scroll-to-top{
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    opacity: 0;
+    transition: all .2s ease-in-out;
+
+}
+.show-scroll-top{
+    opacity: 1;
+    transition: all .2s ease-in-out;
+
+}
+img{
+    height: 45px;
+    width: 45px;
+    object-fit: contain;
+    cursor: pointer;
+    &:hover{
+        opacity: .7;
+    }
+}

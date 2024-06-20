@@ -1,0 +1,34 @@
+@import '../../../styles/styles.scss';
+.main-container{
+    background-color: $page-background-color;
+    @include flex(row,center,center);
+    min-height: 100vh;
+
+    color: $text-color;
+    .sub-container{
+        @include flex(column,center,center);
+  
+        img{
+            width: 71px;
+            height: 72px;
+            object-fit: contain;
+        }
+        .thank-text{
+             font-size: 45px;
+             font-family: 'montserrat-bold';
+             padding-top: 40px;
+        }
+        .small-text{
+            font-size: 21px;
+            font-family: 'montserrat-regular';
+            padding-top: 30px;
+        }
+        .back-link{
+            font-size: 15px;
+            font-family: 'montserrat-regular';
+            text-decoration: underline;
+            padding-top: 100px;
+            cursor: pointer;
+        }
+    }
+}

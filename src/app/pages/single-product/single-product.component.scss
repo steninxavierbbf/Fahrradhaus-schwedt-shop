@@ -1,0 +1,261 @@
+@import '../../../styles/styles.scss';
+
+@mixin color-code{
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+ 
+  &:hover{
+    box-shadow: 0 0 3px black;
+    border: 3px solid #FFF;
+  } 
+}
+@mixin counter-operations{
+  height: 24px;
+  width: 24px;
+  border-radius: 50%;
+  border: $page-background-color 1px solid;
+  @include flex(row,center,center)
+}
+.main-container{
+  padding-top: 120px;
+  min-height: calc(100vh - 120px);
+  background-color: $page-background-color;
+  color: $text-color;
+  position: relative;
+  .sub-menu-bar{
+    z-index: 1;
+    background-color: $brand-color;
+    color: $secondary-color;
+    height: 200px;
+    width: 100%;  
+    @include flex (row,center,end);
+    gap: 80px;
+    padding-bottom: 30px;   
+    position: fixed;
+    font-size: 15px;
+    font-family: 'montserrat-bold';
+    transition: all 1s ease;
+    .menu-item{
+        cursor: pointer;
+    }
+ 
+  }
+  .scrolled-menu-height{
+    height: 80px;
+    @include flex (row,center,center);
+    padding-bottom: 0px;
+  }
+
+.breadcrumbs-section{
+    @include flex(row,center,center);
+    margin-top: 280px;
+  
+    
+    .breadcrumbs{
+        
+        @include flex(row,start,center);
+        gap: 40px;
+        @include content-width;
+        font-size: 13px;
+        font-family: 'montserrat-regular';
+}
+  }
+  .bike-details-container{
+    @include flex(row,center,center);
+    margin-top: 40px;
+    padding-bottom: 140px;
+    .bike-details{
+        @include content-width;
+        @include flex(row,center,center);
+        gap: 140px;
+        .photo-section{
+            @include flex(column,start,start);
+            gap: 15px;
+            .main-image{
+             height: 469px;
+             width: 624px;
+             background-color: $secondary-color;
+             @include flex(row,center,center);
+             img{
+                height: 318px;
+                width: 506px;
+                object-fit: contain;
+             }
+            }
+            .child-images{
+    @include flex(row,center,center);
+    cursor: pointer;
+    gap: 15px;
+    img{
+        height: 166px;
+        width: 175px;
+        object-fit: contain;
+        background-color: $secondary-color;
+        padding: 30px;
+    }
+            }
+        }
+        .details-section{
+          @include flex(column,start,start);
+          .brand-name{
+           font-size: 20px;
+           font-family: 'montserrat-bold';
+       
+          }
+          .bike-name{
+         font-size: 45px;
+         font-family: 'montserrat-regular';
+         padding-bottom: 25px;
+          }
+          .rim-spec{
+         font-size: 15px;
+         font-family: 'montserrat-regular';
+         padding-bottom: 60px;
+          }
+          .price{
+ font-size: 36px;
+ font-family: 'montserrat-bold';
+ padding-bottom: 25px;
+          }
+          .price-details{
+  font-size: 13px;
+  font-family: 'montserrat-regular';
+  padding-bottom: 25px ;
+          }
+          .design{
+            font-size: 15px;
+            font-family: 'montserrat-regular';
+            padding-bottom: 50px;
+          }
+          .color-spec{
+            font-size: 15px;
+            font-family: 'montserrat-regular';
+            @include flex(row,center,center);
+            gap: 95px;
+            padding-bottom: 30px;
+          }
+          .color-codes{
+            @include flex(row,center,center);
+            gap: 30px;
+            padding-bottom: 30px; 
+            height: 80px;
+            .color{
+              @include flex(column,center,center);
+              gap: 10px;
+              font-size: 18px;
+              font-family: 'montserrat-regular';
+              cursor: pointer;
+              &:hover{
+                font-family: 'montserrat-bold';
+              }
+              .color1{
+                @include color-code;
+                background-color: $brand-color; 
+                             }
+                             .color2{
+                         @include color-code;
+                         background-color: #358A94;
+                             }
+                             .color3{
+                 @include color-code;
+                 background-color: $secondary-color; 
+                             }
+            }              ;
+
+          }
+          .quantity{
+          background-color: $secondary-color;
+          @include flex(row,space-between,center);
+          padding: 0px 15px;
+          width: calc(406px - 30px);
+          height: 65px;
+          font-size: 17px;
+          font-family: 'montserrat-regular';
+          margin-bottom: 30px;
+          .counter{
+            @include flex(row,center,center);
+            gap: 10px;
+            font-family: 'montserrat-bold';
+            .operation{
+              @include counter-operations;
+              cursor: pointer;
+              &:hover{
+                border: black 1px solid;
+              }
+            }
+
+          }
+          }
+          button{
+            width: 406px;
+            height: 47px;
+            color: $secondary-color;
+            font-size: 13px;
+            font-family: 'montserrat-bold';
+            background-color: $brand-color;
+            cursor: pointer;
+            border: none;
+            transition: all .2s ease-in-out;
+            &:hover{
+              transform: scale(1.1)
+            }
+          }
+        }
+      }
+  }
+.bike-features{
+  background-color: $secondary-color;
+  padding: 95px 0px;
+  @include flex(column,center,center);
+  .headline{
+    font-size: 20px;
+    font-family: 'montserrat-bold';
+    padding-bottom: 55px;
+  }
+  .bike-headline{
+    font-size: 45px;
+    font-family: 'montserrat-regular';
+  }
+  .gear{
+    font-size: 15px;
+    font-family: 'montserrat-regular';
+    padding: 30px 0px 60px 0px;
+  }
+  .features{
+    @include flex(column,start,start);
+    height: 315px;
+    width: 650px;
+    gap: 30px;
+    flex-wrap: wrap;
+    .property{
+      @include flex(row,center,center);
+      gap: 5px;
+      .key{
+        font-size: 15px;
+        font-family: 'montserrat-bold';
+      }
+      .value{
+        font-size: 15px;
+        font-family: 'montserrat-regular';
+      }
+    }
+  }
+
+}
+.widget{
+  top:21.1%;
+  right: 0;
+  position: fixed;
+  z-index: 0;
+
+}
+.blur{
+  top:21.1%;
+  backdrop-filter: blur(5px);
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+}
+

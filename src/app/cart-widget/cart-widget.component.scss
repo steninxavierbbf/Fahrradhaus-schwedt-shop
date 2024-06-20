@@ -1,0 +1,84 @@
+@import "../../styles/styles.scss"; 
+.main-container{
+    width: 353;
+    height: 373;
+    color: $text-color;
+    border: 1px solid $footer-background;
+    padding: 25px;
+    background-color: $page-background-color;
+    .product{
+@include flex(column,start,start);
+gap: 25px;
+.full-product{
+    @include flex(column,start,start);
+    .section{
+        @include flex(row,center,center);
+        gap: 10px;
+        .image{
+    background-color: $secondary-color;
+height: 80px;
+width: 80px;
+@include flex(row,center,center);
+    img{
+        width: 64px;
+        height: 40px;
+        object-fit: contain;
+    } 
+        }
+        .bike-details{
+            @include flex(column,start,start);
+            font-size: 14px;
+            font-family: 'montserrat-regular';
+          .counter-section{
+            @include flex(row,space-between,center);
+            gap: 60px;
+            .counter{
+                @include flex(row,center,center);
+                font-size: 14px;
+                font-family: 'montserrat-bold';
+                gap: 25px;
+                p{
+                    height: 24px;
+                    width: 24px;
+                    border-radius: 50%;
+                    border: 1px solid #E9E9E9;
+                    @include flex(row,center,center);
+                    cursor: pointer;
+                }
+            }
+          }
+          .price{
+            width: 100%;
+            text-align: end;
+          }
+        }
+    }
+    .line{
+        width: 280px;
+        height: 1px;
+        background-color: #E9E9E9;
+        margin-top: 25px
+    }
+}
+
+
+    }
+    
+.sum{
+    @include flex(row,space-between,center);
+    font-size: 14px;
+    font-family: 'montserrat-bold';
+    padding: 25px 0px 25px 0px;
+}
+
+    button{
+        height: 49px;
+        width: 280px;
+        color: $secondary-color;
+        background-color: $brand-color;
+        cursor: pointer;
+        font-family: 'montserrat-bold';
+        font-size: 14px;
+        border: none;
+    }
+}

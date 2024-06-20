@@ -1,5 +1,5 @@
 import { NgFor } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-fahrradverleih',
@@ -8,7 +8,10 @@ import { Component } from '@angular/core';
   templateUrl: './fahrradverleih.component.html',
   styleUrl: './fahrradverleih.component.scss'
 })
-export class FahrradverleihComponent {
+export class FahrradverleihComponent implements OnInit {
+  ngOnInit(): void {
+    window.scrollTo(0,0)
+  }
 descriptions=[{
   image:"assets/images/fahrradverleih/image1.jpg",
   details:{
@@ -28,7 +31,7 @@ descriptions=[{
   image:"assets/images/fahrradverleih/image3.jpg",
   details:{
     title:"",
-    description:["Eine Kaution in Höhe von 50,- € in bar pro Rad ist zum Entleihen erforderlich und wird dann mit der fälligen Gebühr verrechnet.","Bitte halten Sie Ihren Personalausweis bereit.","Bei Gruppen bitten wir um vorherige Reservierung unter 03361 32019 oder über info@radprofis-am-bahnhof.de","Für weitere Fragen stehen wir Ihnen gerne zur Verfügung."]
+    description:["Eine Kaution in Höhe von 50,- € in bar pro Rad ist zum Entleihen erforderlich und wird dann mit der fälligen Gebühr verrechnet.","Bitte halten Sie Ihren Personalausweis bereit.","Bei Gruppen bitten wir um vorherige Reservierung unter <strong> 03361 32019 </strong> oder über <strong> info@radprofis-am-bahnhof.de </strong>","Für weitere Fragen stehen wir Ihnen gerne zur Verfügung."]
   }
 }
 

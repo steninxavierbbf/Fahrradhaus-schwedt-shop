@@ -1,0 +1,49 @@
+<div class="main-container">
+    <div class="banner">
+        <div class="text1">Service &</div>
+        <div class="text2">Leistungen</div>
+    </div>
+    <div class="sub-section">
+        <div class="headline">UNSERE LEISTUNGEN</div>
+        <div class="services-section1">
+               <div class="service-items" *ngFor="let service of services">
+        <div class="item">
+            <div class="service-headline">{{service.title}}</div>
+            <div class="description">{{service.description}}</div>
+        </div>    
+               </div>
+        </div>
+        <div class="services-section2">
+            <div class="content-width">
+                <div class="headline2">UNSER SERVICE</div>
+                <div class="logos">
+                    <img src="assets/images/services/Bikeleasing_Logo.png" alt="Bikeleasing_Logo">
+                    <img src="assets/images/services/BB_Logo.png" alt="BB_Logo">
+                    <img src="assets/images/services/Jobrad_logo.png" alt="Jobrad_logo.png">
+                </div>
+                <div class="section-1">
+                    <div class="section-heading">FAHRRADLEASING</div>
+                    <div class="section-description">Durch die staatlich geförderte Steuerersparnis bei der Gehaltsumwandlung, sind Rabatte am Fahrradpreis von durchschnittlich 40 % möglich. Berechnen Sie Ihre persönliche Ersparnis gleich hier online! Sie erhalten in Sekundenschnelle ihre Ersparnis und die monatliche Netto-Rate.</div>
+                </div>
+                <div class="horizontal-line"></div>
+                <div class="points">
+                    <div class="points-heading">Finanzierung – Einfach und schnell</div>
+                    <div class="points-section" *ngFor="let point of points let i=index">
+                        <div class="point-indication">{{i + 1}}</div>
+                        <div class="point-text" [innerHTML]="point"></div>
+                    </div>
+                </div>
+                <div class="text">Selbstverständlich steht bei uns Ihr Datenschutz an erster Stelle.</div>
+            </div>
+      
+        </div>
+        <div class="services-section3">
+            <div class="heading">CONTINENTAL SCHLAUCHAUTOMAT- <br/>RUND UM DIE UHR FAHRRADSCHLÄUCHE</div>
+            <div class="description">Plattfuß adé! Nicht zu übersehen direkt neben unserem Eingang hängt ein CONTINENTAL Schlauchautomat: Hier können Sie jederzeit die gängigsten Schläuche einfach am Automaten ziehen. Ihr Sonntagsausflug ist gerettet!</div>
+            <div class="horizontal-line"></div>
+            <div class="heading">GUTSCHEINE</div>
+            <div class="description">Sie wissen nicht, was Sie schenken sollen? <br/> 
+                Immer wieder beliebt bei unseren Kunden ist unser Gutschein.</div>
+        </div>
+    </div>
+</div>

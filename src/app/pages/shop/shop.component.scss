@@ -1,0 +1,198 @@
+@import "../../../styles/styles.scss";
+
+@mixin banner-text{
+    font-size: 156px;
+    color: $secondary-color;
+    position: absolute;
+    font-family: 'montserrat-bold';
+}
+
+@mixin bike-section-image($backgroundcolor){
+    width: 50%;
+    background-color: $backgroundcolor;
+    height: 100%;
+    @include flex (row,center,center);
+    position: relative;
+    img{
+       height: 294px;
+       width: 457px;
+       z-index: 2;
+       object-fit: contain;
+       padding-top: 8%;
+    }
+    .text{
+       font-size: 140px;
+       color: $secondary-color;
+       font-family: "montserrat-bold";
+       position: absolute;
+       z-index: 1;
+       top: 2%
+    }
+}
+.main-container{
+    min-height: calc(100vh - 120px);
+    padding-top: 120px;
+    .banner{
+        background-color: $photo-background-color;
+        height: calc(100vh - 120px);
+        @include flex(row,center,center);
+        position: relative;
+        img{
+            height: 590px;
+            width: 934px;
+            z-index: 2
+        }
+        .text1{
+@include banner-text;
+top: 12%;
+left: 22%
+        }
+        .text2{
+@include banner-text;
+z-index: 2;
+top: 32%;
+left: 26%;
+        }
+    }
+    .content-section{
+        background-color: $page-background-color;
+        @include flex(column,center,center);
+        .logo-container{
+            @include content-width;
+            padding: 80px 0px;
+            @include flex(row,space-between,center);
+            position: relative;
+            .logo-section{
+                @include flex(row,center,center);
+                position: relative;
+                img{
+                    height: 84px;
+                    width: 93px;
+                    object-fit: contain;
+                    cursor: pointer;
+                }
+                .gray{
+                    position: absolute;
+                    opacity: 1;
+                    transition: opacity 1s ease-in-out;
+                    &:hover{
+                        opacity: 0;
+                    }
+                }
+            
+            }
+
+        }
+        .bikes-container{
+             @include content-width;
+             color: $text-color;
+           .main-container-bike{
+            @include flex (row,center,center);
+            height: 430px;
+            background-color: $secondary-color;
+            .image-section{
+             @include bike-section-image(#B1B1B1)
+            }
+            .text-section-bikes{
+                @include flex (column,start,start);
+                gap: 20px;
+                width: 50%;
+               
+               .category-section{
+                padding-left: 120px;
+                font-family: "montserrat-bold";
+                font-size: 20px;
+                cursor: pointer;
+               }
+            }
+           }
+        }
+        .image-section-yellow{
+            @include bike-section-image(#F7A85C)
+        }
+        .bottom-section{
+            @include content-width;
+            @include flex(row,center,center);
+            height: 260px;
+            padding-bottom: 90px;
+            .title-section{
+              background-color: #B1B1B1;
+              font-size: 67px;
+              font-family: "montserrat-bold";
+              color: $secondary-color;
+              height: 100%;
+              width: 50%;
+              .title{
+                padding: 30px 0px 0px 30px;
+                .title2{
+                  padding-left: 60px;
+                }
+              }
+      
+            }
+            .description-section{
+                width: 50%;
+                background-color: $secondary-color;
+                height: 100%;
+                @include flex(column,center,start);
+                .texts{
+                    padding: 0px 50px;
+                    @include flex(column,center,start);
+                    gap: 40px;
+                    .text1{
+                        font-size: 13px;
+                        font-family: "montserrat-regular";
+                        line-height: 25px;
+                      }
+                      .text2{
+                        font-size: 20px;
+                        font-family: "montserrat-bold";
+                      }
+                }
+            
+            
+            }
+        }
+        .highlight-section{
+            @include flex(column,center,center);
+            @include content-width;
+            gap: 80px;
+            padding-bottom: 80px;
+            .highlight-headline{
+          font-size: 45px;
+          font-family: "montserrat-bold";
+            }
+            .bike-display-section{
+                @include flex(row,space-between,center);
+                flex-wrap: wrap;
+                gap: 10px;
+                .card{
+                    height: 550px;
+                    background-color: $secondary-color;
+                    width: 629px;
+                @include flex(column,center,center);
+                gap: 25px;
+                    img{
+                        height: 322px;
+                        width: 513px;
+                        object-fit: contain;
+                        transition: all 1s ease-in-out;
+                        cursor: pointer;
+                        &:hover{
+                            transform: scale(1.1);
+                        }
+                    }
+                    .small-heading{
+                     font-size: 20px;
+                     font-family: "montserrat-regular";
+                    }
+                    .main-heading{
+                        font-size: 40px;
+                        font-family: "montserrat-regular";               
+                    }
+                }
+            }
+        }
+
+    }
+}

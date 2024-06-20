@@ -1,0 +1,197 @@
+@import "../../styles/styles.scss";
+
+@mixin input-label{
+    label{
+        font-size: 13px;
+        font-family: 'montserrat-bold';
+         }
+         input{
+                width: calc(100% - 20px);
+                height: 45px;
+                border-radius: 5px;  
+                border: 1px solid #E9E9E9;  
+                padding-left: 20px;
+                outline: none;
+                &:focus{
+                    border: 1px solid $brand-color;
+                    }    
+                    &::placeholder{
+                        font-size: 13px;
+                        font-family: 'montserrat-regular';
+                    }      
+         }
+
+}
+
+
+
+.main-container{
+background-color: $secondary-color;
+padding: 15px 30px;
+position: relative;
+width: 100%;
+.notCompleted{
+     @include flex(row,start,center);
+}
+.block1{
+    @include flex(row,start,center);
+    gap: 8px;
+    font-family: 'montserrat-bold';
+ 
+    .circle{
+   height:32px;
+   width: 32px;
+   border-radius: 50%;
+   background-color: #E9E9E9;
+   @include flex(row,center,center);
+   transition: color 1s ease;
+    }
+    .circle-color-change{
+        background-color: black;
+        color: $secondary-color;
+    }
+    .text{
+        font-size: 15px;
+        font-family: 'montserrat-bold';
+    }
+}
+.block2{
+    transition: all 1s ease;
+    margin-top: 40px;
+    border: 1px solid #E9E9E9;
+    border-radius: 5px;
+    padding: 25px;
+    @include flex(row,start,start);
+    gap: 15px;
+    .radio-button{
+        margin-top: 10px;
+        input[type="radio"]{
+            width: 16px;
+            height: 16px;
+            cursor: pointer;
+        }
+        #accent {
+            accent-color: $brand-color;
+        }
+    
+    }
+    .card-information{
+        @include flex(column,start,start);
+        gap: 30px;
+        .card-type{
+         @include flex(row,center,center);
+         gap: 10px;
+         .card-symbol{
+            border: 1px solid #E9E9E9;
+            border-radius: 10px;
+            img{
+                padding: 5px 10px;
+                height:30px;
+                width: 30px;
+                object-fit: contain;
+            }
+         }
+         .card-type-name{
+            font-family: 'montserrat-regular';
+            font-size: 16px;
+         }
+        }
+        form{
+            @include flex(column,start,start);
+            gap: 30px;
+
+            .error-message{
+                font-size: 13px;
+                font-family: 'montserrat-regular';
+                color: $brand-color;
+            }
+            
+            .card-number{
+                @include flex(column,start,start);
+                gap: 12px;
+                width: 369px;
+                @include input-label;
+                transition: all .2s ease-in-out;
+            }
+            .expiry-and-cvv{
+                width: 369px;
+                @include flex(row,space-between,center);
+                gap: 25px;
+                .expiry{
+                    @include flex(column,start,start);
+                    gap: 12px;
+                    width: 65%;
+                    @include input-label;
+                }
+                .cvv{
+                    @include flex(column,start,start);
+                    gap: 12px;
+                    width: 35%;
+                   @include input-label;
+                }
+                transition: all .2s ease-in-out;
+            }
+        }
+
+    }
+}
+.block3{
+    transition: all 1s ease;
+    margin-top: 10px;
+    border: 1px solid #E9E9E9;
+    border-radius: 5px;
+    padding: 25px;
+    @include flex(row,start,center);
+    gap: 15px;
+    .radio-button{
+        margin-top: 8px;
+        input[type="radio"]{
+            width: 16px;
+            height: 16px;
+            cursor: pointer;
+        }
+        #accent {
+            accent-color: $brand-color;
+        }
+    }
+    .card-type{
+        @include flex(row,center,center);
+        gap: 10px;
+        .card-symbol{
+           border: 1px solid #E9E9E9;
+           border-radius: 10px;
+           img{
+               padding: 5px 10px;
+               height:30px;
+               width: 30px;
+               object-fit: contain;
+           }
+        }
+        .card-type-name{
+           font-family: 'montserrat-regular';
+           font-size: 16px;
+        }
+       }
+}
+.block4{
+    transition: all 1s ease;
+    width: 100%;
+    @include flex (row,end,center);
+    margin-bottom: 35px;
+    button{
+        font-size: 14;
+        font-family: 'montserrat-bold';
+        background-color: $brand-color;
+        color: $secondary-color;
+        height: 42px;
+        width: 323px;
+        border: none;
+        margin-top: 50px;
+        cursor: pointer;
+        transition: all 1s ease-in-out;
+        &:hover{
+            transform: scaleY(1.1);
+        }
+    }
+}
+}

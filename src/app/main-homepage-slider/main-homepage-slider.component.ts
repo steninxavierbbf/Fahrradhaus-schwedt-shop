@@ -1,10 +1,11 @@
 import { NgIf, NgStyle } from '@angular/common';
 import { Component, OnDestroy, OnInit, WritableSignal, signal } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-main-homepage-slider',
   standalone: true,
-  imports: [NgIf,NgStyle],
+  imports: [NgIf,NgStyle,RouterLink],
   templateUrl: './main-homepage-slider.component.html',
   styleUrl: './main-homepage-slider.component.scss'
 })

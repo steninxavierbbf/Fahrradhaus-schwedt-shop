@@ -1,0 +1,296 @@
+@import "../../../styles/styles.scss";
+
+
+@mixin information{
+    @include flex(column,start,start);
+    gap: 10px;
+    font-size: 14px;
+    .headline{
+        font-family: 'montserrat-bold';
+        
+    }  
+    .data-section{
+        font-family: 'montserrat-regular';
+    }
+}
+
+.main-container{
+    min-height: calc(100vh - 120px);
+    padding-top: 180px;
+    background-color: $page-background-color;
+    .sub-container{
+
+        @include flex(row,center,center);
+        padding-bottom: 150px;
+        .container-content{
+            @include content-width;
+            .back-link{
+                @include flex(row,start,center);
+                padding: 35px 0px 120px 0px;
+                color: $text-color;
+                font-size: 12px;
+                text-decoration: underline;
+                font-family: 'montserrat-regular';
+                cursor: pointer;
+            }
+            .full-section{
+                @include flex(row,space-between,start);
+                min-height: 590px;
+                .order-details{
+                    @include flex(column,start,start);
+                    width: 50%;
+                    .payment-details{
+                       height: calc(100% - 65px);
+                        background-color: $secondary-color;
+                        padding:15px 30px 50px 30px;
+                        position: relative;
+                        width: 100%;
+                        .block1{
+                            @include flex(row,space-between,center);
+                            .left{
+                                @include flex(row,center,center);
+                                gap: 8px;
+                                font-family: 'montserrat-bold';
+                                .circle{
+                                   height: 32px;
+                                   width: 32px;
+                                   border-radius: 50%;
+                                   background-color: black; 
+                                   color: $secondary-color;
+                                   @include flex(row,center,center);
+                                
+                                }
+                                img{
+                                    height: 32px;
+                                    width: 32px;
+                                    object-fit: contain;
+                   
+                                }
+                                .text{
+                                    font-size: 13px ;
+                                }
+                            }
+                            .right{
+                                @include flex(row,center,center);
+                                gap: 15px;
+                                font-size: 13px;
+                                .delivery{
+                                    font-family: 'montserrat-regular';
+                                }
+                                .place{
+                                    font-family: 'montserrat-bold';
+                                }
+                                .arrow-down{
+                                    img{
+                                        height: 20px;
+                                        width: 20px;
+                                        object-fit: contain;
+                                    }
+                                }
+                            }
+                        }
+                        .information-filled{
+                            @include flex(column,start,start);
+                            gap: 30px;
+                            padding-top: 40px;
+                            .pinformation {
+                           @include information
+                            }
+                            .address-section{
+                                @include information
+                            }
+                        }
+                        .block2{
+                            padding-top: 50px;
+                            
+                            form{
+                                @include flex(column,none,none);
+                                gap: 30px;
+                                .invalid{
+                                    font-size: 13px;
+                                            font-family: 'montserrat-regular';
+                                            color: $brand-color
+                                }
+                                .group{
+                                    @include flex (row,space-between,center);
+
+                                    input{
+                                        height: 45px;
+                                        width: 270px;
+                                        padding-left: 20px;
+                                        &::placeholder{
+                                            font-size: 13px;
+                                            font-family: 'montserrat-regular';
+                                        }
+
+                                    }
+                                    .input-section{
+                                        @include flex(column,start,start);
+                                        gap: 12px;
+                                    }
+                                }
+                                .input-section{
+                                    @include flex(column,start,start);
+                                    gap: 12px;
+                                }
+                                input{
+                                    height: 45px;
+                                    width: calc(100% - 26px);
+                                    padding-left: 20px;
+                                    outline: none;
+                                    border: 1px solid #E9E9E9;
+                                    border-radius: 5px;
+                                    &:focus{
+                                    border: 1px solid $brand-color;
+                                    }
+                                    &::placeholder{
+                                        font-size: 13px;
+                                        font-family: 'montserrat-regular';
+                                    }
+                                       }
+                                label{
+                                    font-family: 'montserrat-bold';
+                                    font-size: 13px;
+                                }
+    .error-message{
+        font-size: 13px;
+        font-family: 'montserrat-regular';
+        color: $brand-color;
+        @include flex(row,center,center)
+    }
+                            }
+                        }
+                        .line{
+                            background-color: #E9E9E9;
+                            height: 1px;
+                            width: 100%;
+                            position: absolute;
+                            left: 0;
+                            top: 50px;
+                            margin: 15px 0px 35px 0px;
+                        }
+                        .button-section{
+                            width: 100%;
+                            @include flex(row,end,center);
+                            button{
+                                font-size: 14;
+                                font-family: 'montserrat-bold';
+                                background-color: $brand-color;
+                                color: $secondary-color;
+                                height: 42px;
+                                width: 323px;
+                                border: none;
+                                margin-top: 20px;
+                                cursor: pointer;
+                                transition: all 1s ease-in-out;
+                                &:hover{
+                                    transform: scaleY(1.1);
+                                }
+                            }
+                        }
+    
+                    }
+         .payment-options{
+            margin-top: 35px;
+            width: 100%;
+         }
+         .filled{
+            margin-top: 0px;
+            width: 100%;
+         }
+                }
+                .ordered-products{
+                    width: 50%;
+                    height: 100%;
+                    @include flex(row,end,start);
+                    padding-top: 0px;
+                    .main-container-bike-details{
+                        @include flex(column,start,start);
+                       gap: 25px;
+                        .ordered-items{
+                            @include flex(column,start,start);
+                            .section{
+                 @include flex(row,center,center);
+                 gap: 10px;
+                 .image{
+                    height: 121px;
+                    width: 122px;
+                    background-color: $secondary-color;
+                    @include flex(row,center,center);
+                    img{
+                        width: 97px;
+                        height: 60px;
+                        object-fit: contain;
+                    }
+                 }
+                 .bike-details{
+                    @include flex(column,start,start);
+                    font-size: 15px;
+                    font-family: 'montserrat-regular';
+                    gap: 15px;
+                    .counter-section{
+                        @include flex(row,space-between,center);
+                        gap: 150px;
+                        .counter{
+                            @include flex(row,center,center);
+                            font-size: 14px;
+                            font-family: 'montserrat-bold';
+                            gap: 25px;
+                            p{
+                                height: 24px;
+                                width: 24px;
+                                border-radius: 50%;
+                                border: 1px solid #E9E9E9;
+                                @include flex(row,center,center);
+                                cursor: pointer;
+                                &:hover{
+                                    border: 1px solid black;
+                                }
+                                img{
+                                    height: 18px;
+                                    width: 18px;
+                                    object-fit: contain;
+                                }
+                            }
+                        }
+                    }
+                    .price{
+                        width: 100%;
+                        text-align: end;
+                    }
+                 }
+                            }
+                            .line{
+                                width: 411px;
+                                height: 3px;
+                                background-color: #E9E9E9;
+                                margin-top: 25px;
+                            }
+    
+                        }
+                    }
+                    .price-section{
+                        width: 100%;
+                        .price-details{
+                            @include flex(row,space-between,center);
+                            font-size: 15px;
+                            font-family: 'montserrat-regular';
+                            width: 100%;
+                        }
+                        .price-details:nth-child(2){
+                            padding-top: 15px;
+                        }
+                        .price-details:nth-child(3){
+                            font-family: 'montserrat-bold';
+                            padding-top: 40px;
+                            font-size: 19px;
+    
+                        }
+                    }
+    
+                    }
+            }
+
+        }
+    }
+}

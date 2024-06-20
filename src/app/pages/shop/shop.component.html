@@ -1,0 +1,99 @@
+
+<div class="main-container">
+    <div class="banner">
+        <img src="assets/images/main_slider/bike_slider1.png" 
+        alt="section-bike">
+        <div class="text1">Unser</div>
+         <div class="text2">Online-Shop</div>        
+    </div>
+    <div class="content-section">
+        <div class="logo-container">
+            <div class="logo-section">
+                <div class="gray"><img src="assets/images/shop/bbf-grau.png" alt="logo"></div>
+                <div class="color"><img src="assets/images/shop/bbf.png" alt="logo"></div>
+            </div>
+            <div class="logo-section">
+                <div class="gray"><img src="assets/images/shop/Bottecchia-logo-grau.png" alt="logo"></div>
+                <div class="color"><img src="assets/images/shop/Bottecchia-logo.png" alt="logo"></div>
+            </div>
+            <div class="logo-section">
+                <div class="gray"><img src="assets/images/shop/checker-pig-logo-grau.png" alt="logo"></div>
+                <div class="color"><img src="assets/images/shop/checker-pig-logo.png" alt="logo"></div>
+            </div>
+            <div class="logo-section">
+                <div class="gray"><img src="assets/images/shop/columbus-logo-grau.png" alt="logo"></div>
+                <div class="color"><img src="assets/images/shop/columbus-logo.png" alt="logo"></div>
+            </div>
+            <div class="logo-section">
+                <div class="gray"><img src="assets/images/shop/dahon-logo-grau.png" alt="logo"></div>
+                <div class="color"><img src="assets/images/shop/dahon-logo.png" alt="logo"></div>
+            </div>
+            <div class="logo-section">
+                <div class="gray"><img src="assets/images/shop/Giant-Logo-2022-grau.png" alt="logo"></div>
+                <div class="color"><img src="assets/images/shop/Giant-Logo-2022.png" alt="logo"></div>
+            </div>
+            <div class="logo-section">
+                <div class="gray"><img src="assets/images/shop/johnny-loco-grau.png" alt="logo"></div>
+                <div class="color"><img src="assets/images/shop/johnny-loco.png" alt="logo"></div>
+            </div>
+            <div class="logo-section">
+                <div class="gray"><img src="assets/images/shop/viva-logo-grau.png" alt="logo"></div>
+                <div class="color"><img src="assets/images/shop/viva-logo.png" alt="logo"></div>
+            </div>
+        </div>
+        <div class="bikes-container">
+            <div class="main-container-bike">
+
+                <div class="image-section">
+                    <img src="assets/images/small-slider/bike3.png" alt="E-bikes">
+                    <div class="text">E-Bikes</div>
+                </div>
+                
+                <div class="text-section-bikes">
+                    <div  *ngFor="let category of categories">
+                    <div class="category-section">{{category}}</div>    
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bikes-container">
+            <div class="main-container-bike">
+                <div class="text-section-bikes">
+                    <div  *ngFor="let category of categories">
+                    <div class="category-section">{{category}}</div>    
+                    </div>
+                </div>
+
+                <div class="image-section-yellow">
+                    <img src="assets/images/small-slider/bike1.png" alt="E-bikes">
+                    <div class="text">Bikes</div>
+                </div>
+            </div>
+        </div>
+    <div class="bottom-section">
+        <div class="title-section">
+            <div class="title">
+                <div class="title1">Teile &</div>
+                <div class="title2">Zubehör</div>
+                </div></div>
+        <div class="description-section">
+            <div class="texts">
+                <div class="text1">Außer unseren Fahrrädern, bieten wir auch ein umfangreiches Angebot an Fahrradteilen und Fahrradzubehör. Hier finden Sie eine Auswahl der von uns geführten Hersteller. Sollten wir ein von Ihnen gewünschtes Teil gerade nicht da haben, so können wir es Ihnen – fast immer – innerhalb von 24 Stunden bestellen! Testen Sie uns!</div>
+                <div class="text2">Shop Zubehör & Teile</div>
+            </div>
+           
+        </div>
+    </div>
+    <div class="highlight-section">
+        <div class="highlight-headline">HIGHLIGHTS IM MAI</div>
+        <div class="bike-display-section">
+            <div class="card" *ngFor="let bike of cardImages" [routerLink]="['/single-product']">
+                <img src={{bike.image}} alt="">
+                <div class="small-heading">{{bike.smallHeading}}</div>
+                <div class="main-heading">{{bike.mainHeading}}</div>
+            </div>
+        </div>
+    </div>
+
+    </div>
+</div>

@@ -1,0 +1,51 @@
+<div class="main-container">
+    <div class="banner">
+        <div class="text">Über uns</div>
+    </div>
+    <div class="content-section">
+        <div class="content-section1">
+            <div class="item">
+            <div class="heading">WER WIR SIND</div>
+            <div class="description">Seit über 15 Jahren – seit 2011 direkt am Bahnhof – bietet Ihnen unser Fahrradfachgeschäft ein breites Angebot an Marken-Fahrrädern, Fahrrad-Teilen und Zubehör verbunden mit erstklassiger Beratung und fachmännischem Service. Wir sind selbst leidenschaftliche Fahrradfahrer. Daher nehmen wir uns gerne Zeit für Sie, damit Sie das passende Fahrrad finden.</div>
+        </div>
+            <div class="item">
+            <div class="heading">WAS WIR BIETEN</div>
+            <div class="description">Auf fast 300 m² auf zwei Etagen finden Sie bei uns über 200 Modelle ständig ausgestellt: Sie suchen ein Stadtrad zum Einkaufen oder ein Trekkingrad für den nächsten Ausflug oder Ihr Kind braucht ein verkehrssicheres Rad für den Schulweg? Bei uns finden Sie, was Sie suchen.</div>
+        </div>
+        </div>
+        <div class="content-section2">
+            <div class="content-section">
+            <div class="map">
+                <img src="assets/images/map.png" alt="map">
+            </div>
+            <div class="contact-details">
+                <div class="headline">SO ERREICHEN SIE UNS</div>
+                <div class="layer">Sie finden uns direkt im Bahnhofsgebäude Fürstenwalde/Spree, Eingang vom Bahnhofsvorplatz. Parkplätze für Fahrrad und PKW sind ausreichend vorhanden.</div>
+                <div class="layer">
+                    Am Bahnhof 1 <br/>
+                    15517 Fürstenwalde <br/>
+                    Tel. 03361/32019 <br/>
+                    info&#64;radprofis-am-bahnhof.de <br/>
+                    
+                </div>
+                <div class="layer">
+                    Öffnungszeiten: <br/>
+                    Montag–Freitag 9–18 Uhr <br/>
+                    Samstag 9–12 Uhr <br/>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="content-section3">
+        <div class="headline">UNSERE FAHRRADMARKEN</div>
+        <div class="brand-section" *ngFor="let brand of brands let i=index" [class.brand-reverse]="i %2!==0">
+            <div class="description">
+           <img src={{brand.logo}} alt="logo" class="logo">
+                <div class="text" [innerHTML]="brand.description"></div>
+                <div class="link">{{brand.website}}</div>
+            </div>
+            <img src={{brand.image}} alt="brand-image">
+        </div>
+    </div>
+    </div>
+</div>

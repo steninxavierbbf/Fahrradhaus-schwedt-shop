@@ -21,12 +21,14 @@
         @include flex(column,center,center);
         padding: 200px 0px;
         background-color: $page-background-color;
+        color: $text-color;
         .sections{
             @include content-width;
             @include flex(row,center,center);
             img{
                 width: 635px;
-                height: 425px;
+                height: 445px;
+                object-fit: cover
             }
             .text-section{
                 @include flex(column,start,start);
@@ -40,8 +42,10 @@
             .description{
                 font-size: 15px;
                 font-family: "montserrat-regular";
+                line-height: 25px;
+
             }
-    
+
         }
         .reverse-section{
             @include flex(row-reverse,center,center);

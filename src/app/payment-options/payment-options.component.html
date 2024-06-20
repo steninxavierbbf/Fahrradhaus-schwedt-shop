@@ -1,0 +1,50 @@
+<div class="main-container">
+  <div class="block1">
+    <div class="circle" [class.circle-color-change]="option">2</div>
+    <div class="text">ZAHLUNG</div>
+  </div>
+  <div class="block2" *ngIf="option">
+    <div class="radio-button"><input type="radio" id="accent" [checked]="cardSelected"  (click)="creditCardSelected()"></div>
+    <div class="card-information">
+        <div class="card-type">
+            <div class="card-symbol"><img src="assets/icons/card.png" alt=""></div>
+            <div class="card-type-name">Kreditkarte</div>
+        </div>
+     
+        <form *ngIf="cardSelected" >
+          <div class="card-number"  >
+            <label for="">Kartennummer</label>
+            <input  placeholder="1234 5678 9012 3456"
+            id="cc-number"  type="tel" autocomplete="cc-number" name="cardnumber" ccNumber (input)="cardNumberCheck($event)" [(ngModel)]="cardDetails.cardnumber">
+           
+        </div>
+        <div class="error-message" *ngIf="!cardCheck">Card number is not valid</div>
+        <div class="expiry-and-cvv"  >
+            <div class="expiry">
+                <label for="">Ablaufdatum</label>
+                <input  placeholder="03/2024"  id="cc-exp-date" name="expiry" type="tel" autocomplete="cc-exp" [(ngModel)]="cardDetails.expiry" ccExp (input)="expiryDateCheck($event)">
+            </div>
+            <div class="cvv">
+                <label for="">CVC/CVV</label>
+                <input  placeholder="1111"  id="cc-cvc" name="cvv" type="tel" autocomplete="off" ccCVC (input)="cvvCheck($event)" [(ngModel)]="cardDetails.cvv">
+            </div>
+        </div>
+        <div class="error-message" *ngIf="!expiryDate">Date is not valid</div>
+        <div class="error-message" *ngIf="!cvvchecked">CVV is incorrect</div>
+        </form>
+ 
+        
+    </div>
+  </div>
+  <div class="block3" *ngIf="option">
+    <div class="radio-button"><input type="radio"  id="accent" [checked]="paypal" (click)="paypalSelected()"></div>
+    <div class="card-type">
+        <div class="card-symbol"><img src="assets/icons/paypal.png" alt=""></div>
+        <div class="card-type-name">Paypal</div>
+    </div>
+  </div>
+  <div class="block4" *ngIf="option">
+    <button (click)="submitPayment()">Bezahlen</button>
+  </div>
+</div>
+ 

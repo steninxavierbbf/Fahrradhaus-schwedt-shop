@@ -1,0 +1,62 @@
+<div class="main-container" [class.background-section]="isCLicked">
+    <div class="sub-menu-bar" [class.scrolled-menu-height]="isScrolled">
+        <div class="menu-item">E-BIKES</div>
+        <div class="menu-item">BIKES</div>
+        <div class="menu-item">TEILE & ZUBEHÖR</div>
+    </div> 
+    <div class="breadcrumbs-section">
+    <div class="breadcrumbs">
+            <div class="left">< Übersicht</div>
+            <div class="right">Fahrräder > City</div>
+        </div>
+
+    </div>   
+    <div class="bike-details-container">
+        <div class="bike-details">
+            <div class="photo-section">
+                <div class="main-image">
+                    <img src="assets/images/main_slider/bike_slider1.png" alt="main-image" *ngIf="!selectedImage">
+                    <img src="assets/images/{{selectedImage}}.jpg" alt="main-image" *ngIf="selectedImage">
+                </div>
+                 <div class="child-images">
+                    <img src="assets/images/bike4-1.jpg" alt="bike" (click)="selectImageFn('bike4-1')" >
+                    <img src="assets/images/bike4-2.jpg" alt="bike" (click)="selectImageFn('bike4-2')">
+                 </div>
+            </div>
+    
+            <div class="details-section">
+                <div class="brand-name">BBF CITY</div>
+                <div class="bike-name">BRÜGGE 1.0</div>
+                <div class="rim-spec">28",RH 50cm,türkis</div>
+                <div class="price">749,90 €</div>
+                <div class="price-details">(inkl. MwSt.)</div>
+                <div class="design">Anmutiges Design in schönsten Farben mit klassischem City Rahmen.</div>
+                <div class="color-spec"><p>Beschreibung</p><p>></p></div>
+                <div class="color-codes">
+                    <div class="color"><div class="color1"></div>Rot</div>
+                    <div class="color"><div class="color2"></div>Türkis</div>
+                    <div class="color"><div class="color3"></div>Weiß</div>
+                </div>
+                <div class="quantity"><p>Stückzahl</p><div class="counter"><div class="operation">-</div> <div class="count">1</div><div class="operation">+</div></div></div>
+                <button (click)="cartSection()">In den warenkorb</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="bike-features">
+        <div class="headline">BESCHREIBUNG</div>
+        <div class="bike-headline">CITYRAD BBF BRÜGGE 1.0</div>
+        <div class="gear">7-Gang ND Wave</div>
+        <div class="features">
+            <div class="property" *ngFor="let property of properties">
+                <div class="key">{{property.key}}</div>
+                :
+                <div class="value">{{property.value}}</div>
+            </div>
+        </div>                  
+    </div>
+    <div class="blur" *ngIf="isCLicked && isScrolled"></div>
+     <div class="widget" *ngIf="isCLicked && isScrolled">
+        <app-cart-widget></app-cart-widget>
+     </div>
+</div>

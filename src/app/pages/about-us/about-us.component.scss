@@ -1,0 +1,120 @@
+@import '../../../styles/styles.scss';
+
+.main-container{
+    min-height: calc(100vh - 120px);
+    padding-top: 120px;
+    color: $text-color;
+    .banner{
+        height: 550px;
+        background-color: $banner-background-color;
+        font-family: 'montserrat-bold';
+        font-size: 100px;
+        color: $secondary-color;
+        @include flex (column,center,center);
+    }
+    .content-section{
+        background-color: $page-background-color;
+        color: $text-color;
+        @include flex(column,center,center);           ;
+        .content-section1{
+            @include flex(row,space-between,center);
+            @include content-width;
+            padding: 115px 0px ;
+            .item{
+                @include flex(column,start,start);
+                width: 500px;
+                gap: 25px;
+                .heading{
+                    font-size: 20px;
+                    font-family: 'montserrat-bold';
+                }
+                .description{
+                    font-family: 'montserrat-regular';
+                    font-size: 15px;
+                    line-height: 25px;
+                }
+            }
+        }
+        .content-section2{
+            padding: 115px 0px;
+            background-color: $secondary-color;
+            width: 100%;
+            @include flex(row,center,center);
+            .content-section{
+                @include flex(row,space-between,center);
+                @include content-width;
+                background-color: $secondary-color;
+                .map{
+                    img{
+                        height: 625px;
+                        width: 625px;
+                    }
+                }
+                .contact-details{
+                    width: 515px;
+                    @include flex(column,start,start);
+                    gap: 30px;
+                    .headline{
+                        font-size: 20px;
+                        font-family: 'montserrat-bold';
+                    }
+                    .layer{
+                        font-family: 'montserrat-regular';
+                        font-size: 15px;
+                        line-height: 25px;
+                    }
+                    .layer:nth-child(3){
+                        line-height: 50px;
+                    }
+                    .layer:nth-child(4){
+                        line-height: 50px;
+                    }
+    
+                }
+            }
+        }
+        .content-section3{
+            padding: 115px 0px;
+            @include content-width;
+            @include flex(column,center,center);
+            gap: 100px;
+            .headline{
+                font-size: 45px;
+                font-family: 'montserrat-bold';
+            }
+            .brand-section{
+                @include flex(row,space-between,center);
+                gap: 60px;
+              .description{
+                @include flex(column,start,start);
+                gap: 50px;
+                width: 50%;
+                .logo{
+                   width: 242px;
+                   height: 128px;
+                   object-fit: contain;
+                }
+                .text{
+                   font-size: 15px;
+                   font-family: 'montserrat-regular';
+                   line-height: 25px;
+                }
+                .link{
+                    font-size: 20px;
+                    font-family: 'montserrat-bold';
+                    cursor: pointer;
+                }
+              }
+              img{
+                height: 620px;
+                width: 50%;
+                object-fit: cover;
+              }
+            }
+            .brand-reverse{
+                @include flex(row-reverse,center,center);
+            }
+        }
+
+    }
+}

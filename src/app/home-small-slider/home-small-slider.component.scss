@@ -1,53 +1,87 @@
 @import '../../styles/styles.scss';
+
+@mixin arrow-size{
+    height: 40px;
+    width: 40px;
+    object-fit: contain;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
 .main-container{
-    padding-bottom: 140px;
-    color: $footer-background;
-    @include flex(row,center,center);
-  .content-section{
-    @include flex(column,center,center);
-    @include content-width;
-    overflow: hidden;
-    gap: 50px;
-    padding: 10px 0px;
-    .headline{
+        padding-bottom: 140px;
+        color: $footer-background;
+        @include flex(column,center,center);
+        gap: 50px;
+        color: $text-color;
+        .title{
     font-size: 45px;
     font-family: 'montserrat-bold';
-    }
-    .slider{
-        @include flex(row,center,center);
-        gap: 20px;
-        width: auto;
-        min-height: 34vh;
-        .picture{
-            height: 412px;
-            width: 471px;
-            background-color: $secondary-color;
-            @include flex(column,center,center);
-            gap: 20px;
-          
-            img{
-                height: 240px;
-                width: 382px;
-                padding: 20px;
-                object-fit: contain;
-                transition: all 0.3s ease-in-out;
-                cursor: pointer;
-                &:hover{
-                    transform: scale(1.1); 
+        }
+        .item-slider {
+            padding: 0px 5px;
+            justify-content: space-between;
+            align-items: center;
+            display: flex;
+            position: relative;
+            @include content-width;
+            .left-arrow{
+                img{
+                @include arrow-size;
+                margin-right: 15px;
                 }
 
             }
-            .light-heading{
-                font-size: 20px;
-               font-family: 'montserrat-regular';
+            .right-arrow{
+                img{
+                    @include arrow-size;
+                    margin-left: 15px;
+                }
             }
-            .main-heading{
-              font-size: 40px;
-              font-family: 'montserrat-regular';  
+            .is-disabled-hide{
+               opacity: .2;
             }
-        }
-    }
-    button{
+
+            .item-container{
+                display: inline-flex;
+                justify-content: flex-start;
+                overflow-x: hidden;
+                padding: 0px 5px;
+                overflow-y: hidden;
+               scroll-behavior: smooth;
+                 gap: 20px;
+                 .picture{
+                height: 412px;
+                width: 471px;
+                background-color: $secondary-color;
+                @include flex(column,center,center);
+                gap: 20px;
+                padding: 20px;
+                    img{
+                        height: 240px;
+                        width: 382px;
+                        padding: 20px;
+                        object-fit: contain;
+                        transition: all 0.3s ease-in-out;
+                        cursor: pointer;
+                        &:hover{
+                        transform: scale(1.1); 
+                        }
+                    }
+                                .light-heading{
+                    font-size: 20px;
+                   font-family: 'montserrat-regular';
+                }
+                .main-heading{
+                  font-size: 40px;
+                  font-family: 'montserrat-regular';  
+                }
+                 }
+    
+              }
+          }
+
+              button{
         font-size: 13px;
         font-family: 'montserrat-bold';
         background-color: $brand-color;
@@ -63,5 +97,4 @@
             transform: scale(1.1); 
         }
     }
-  }
 }
