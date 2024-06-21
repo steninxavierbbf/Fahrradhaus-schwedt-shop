@@ -29,7 +29,15 @@ footer{
                     font-size: 13px;
                     font-family: "montserrat-regular";
                     cursor: pointer;
+                    transition: all .3s ease-in-out;
                 }
+
+            }
+ 
+        }
+        .section1:nth-child(2),.section1:nth-child(3){
+            li{
+                text-decoration: underline;
             }
         }
       }

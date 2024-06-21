@@ -50,8 +50,9 @@
                 </div>
                 
                 <div class="text-section-bikes">
-                    <div  *ngFor="let category of categories">
-                    <div class="category-section">{{category}}</div>    
+                    <div  *ngFor="let category of categories" class="parent-section">
+                    <div class="category-section">{{category}}</div> 
+                    <img src="assets/icons/right-arrow.png" alt="arrow"> 
                     </div>
                 </div>
             </div>
@@ -59,8 +60,9 @@
         <div class="bikes-container">
             <div class="main-container-bike">
                 <div class="text-section-bikes">
-                    <div  *ngFor="let category of categories">
-                    <div class="category-section">{{category}}</div>    
+                    <div  *ngFor="let category of categories" class="parent-section">
+                    <div class="category-section">{{category}}</div>   
+                    <img src="assets/icons/right-arrow.png" alt="arrow"> 
                     </div>
                 </div>
 
@@ -78,8 +80,16 @@
                 </div></div>
         <div class="description-section">
             <div class="texts">
-                <div class="text1">Außer unseren Fahrrädern, bieten wir auch ein umfangreiches Angebot an Fahrradteilen und Fahrradzubehör. Hier finden Sie eine Auswahl der von uns geführten Hersteller. Sollten wir ein von Ihnen gewünschtes Teil gerade nicht da haben, so können wir es Ihnen – fast immer – innerhalb von 24 Stunden bestellen! Testen Sie uns!</div>
-                <div class="text2">Shop Zubehör & Teile</div>
+                <div class="text1">Außer unseren Fahrrädern, bieten wir auch ein 
+                    umfangreiches Angebot an Fahrradteilen und Fahrradzubehör. 
+                    Hier finden Sie eine Auswahl der von uns geführten Hersteller. 
+                    Sollten wir ein von Ihnen gewünschtes Teil gerade nicht da haben, 
+                    so können wir es Ihnen – fast immer – innerhalb von 24 Stunden bestellen! 
+                    Testen Sie uns!</div>
+                <div class="text2">
+                     <div class="link">Shop Zubehör & Teile</div>
+                    <img src="assets/icons/right-arrow.png" alt="arrow"> 
+                </div>
             </div>
            
         </div>

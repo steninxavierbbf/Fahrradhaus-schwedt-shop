@@ -31,14 +31,14 @@
                 <div class="price">749,90 €</div>
                 <div class="price-details">(inkl. MwSt.)</div>
                 <div class="design">Anmutiges Design in schönsten Farben mit klassischem City Rahmen.</div>
-                <div class="color-spec"><p>Beschreibung</p><p>></p></div>
+                <div class="color-spec"><p>Beschreibung</p><p class="description-button" (click)="toDescription(target)">></p></div>
                 <div class="color-codes">
                     <div class="color"><div class="color1"></div>Rot</div>
                     <div class="color"><div class="color2"></div>Türkis</div>
                     <div class="color"><div class="color3"></div>Weiß</div>
                 </div>
                 <div class="quantity"><p>Stückzahl</p><div class="counter"><div class="operation">-</div> <div class="count">1</div><div class="operation">+</div></div></div>
-                <button (click)="cartSection()">In den warenkorb</button>
+                <button (click)="cartSection()"  #target>In den warenkorb</button>
             </div>
         </div>
     </div>

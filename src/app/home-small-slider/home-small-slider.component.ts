@@ -21,7 +21,7 @@ slide(shift:number){
   if(this.scrl){
     this.scrl.nativeElement.scrollBy({
       left: shift,
-      behavior: 'smooth'
+      behavior: 'smooth',                                
     });
     this.scrl.nativeElement.scrollLeft += shift;
     this.scrollX += shift;
@@ -42,5 +42,4 @@ scrollCheck(){
   ,"assets/images/small-slider/bike4.png"
  ]
  
-
 }

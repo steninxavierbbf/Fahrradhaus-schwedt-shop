@@ -134,6 +134,9 @@
             @include flex(row,center,center);
             gap: 95px;
             padding-bottom: 30px;
+            .description-button{
+              cursor: pointer;
+            }
           }
           .color-codes{
             @include flex(row,center,center);

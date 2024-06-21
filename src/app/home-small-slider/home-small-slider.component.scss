@@ -82,6 +82,11 @@
           }
 
               button{
+        @include responsive(smartphone-portrait){
+            width: 150px;
+            height: 27px;
+            font-size: 10px;
+        }
         font-size: 13px;
         font-family: 'montserrat-bold';
         background-color: $brand-color;

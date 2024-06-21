@@ -16,6 +16,7 @@ export class SingleProductComponent implements OnInit {
   ngOnInit(): void {
     window.scrollTo(0,0);
   }
+  
   cartSection(){
   this.isCLicked=true
   }
@@ -83,5 +84,8 @@ selectImageFn(selectedImagePath:string){
    }else{
      this.isScrolled=false
    }
+  }
+  toDescription(el:HTMLElement){
+el.scrollIntoView({behavior:'smooth'})
   }
 }

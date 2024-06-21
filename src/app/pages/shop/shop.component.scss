@@ -97,13 +97,25 @@ left: 26%;
                 @include flex (column,start,start);
                 gap: 20px;
                 width: 50%;
-               
-               .category-section{
-                padding-left: 120px;
-                font-family: "montserrat-bold";
-                font-size: 20px;
-                cursor: pointer;
-               }
+                .parent-section{
+                    @include flex (row,start,start);
+                   gap: 10px;
+                }
+                .category-section{
+                    padding-left: 120px;
+                    font-family: "montserrat-bold";
+                    font-size: 20px;
+                    cursor: pointer;
+                   }
+                   img{
+                    height: 23px;
+                    width: 23px;
+                    opacity: 0;
+                    transition: opacity 0.3s ease-in-out;
+                   }
+                   .category-section:hover + img{
+                    opacity: 1;
+                   }
             }
            }
         }
@@ -145,8 +157,22 @@ left: 26%;
                         line-height: 25px;
                       }
                       .text2{
-                        font-size: 20px;
-                        font-family: "montserrat-bold";
+                        @include flex(row,center,center);
+                        gap: 10px;
+                        .link{
+                            font-size: 20px;
+                            font-family: "montserrat-bold";
+                            cursor: pointer;
+                        }
+                        img{
+                            height: 23px;
+                            width: 23px;
+                            opacity: 0;
+                            transition: opacity 0.3s ease-in-out;
+                        }
+                        .link:hover + img{
+                            opacity: 1;
+                        }
                       }
                 }
             
