@@ -2,6 +2,9 @@
 
 @mixin slider-text-property{
     font-size: 150px;
+    @include responsive(smartphone-portrait){
+    font-size: 38px;
+    }
     color: $secondary-color;
     font-family: "montserrat-bold";
     position: absolute;
@@ -16,11 +19,19 @@
     @include flex(row,center,center);
     font-family: "montserrat-regular";
     font-size: 40px;
+    @include responsive(smartphone-portrait){
+        height: 27px;
+        width: 27px;
+        font-size: 20px;
+    }
 }
 .main-container{   
     width: 100%;
     margin: 0;
     height: calc(100vh - 120px);
+    @include responsive(smartphone-portrait){
+        height: 270px;
+    }
     background-color: $photo-background-color ;
     position: relative;
     .slider-images{
@@ -29,11 +40,17 @@
                 @include flex(row,center,start);
                transform: translate(0%, 35%);
                height: 100%;
+               @include responsive(smartphone-portrait){
+                transform: translate(0%, 50%);
+               }
                 img {
                     object-fit: contain;
                     height: 550px;
                     position: relative;
                     z-index: 1;
+                    @include responsive(smartphone-portrait){
+                     height: 150px;
+                    }
                 }
                 .pictureSlider{
                     object-fit: cover;
@@ -42,6 +59,10 @@
                     position: relative;
                     z-index: 1;
                     transform: translate(0%, -35%);
+                    @include responsive(smartphone-portrait){
+                        height: 270px;
+                        transform: translate(0%, -50%);
+                       }
                 }
 
                 .text1{
@@ -69,6 +90,11 @@
                     position: absolute;
                     cursor: pointer;
                     border-radius: 50px;
+                    @include responsive(smartphone-portrait){
+                     height: 26px;
+                     width: 76px;
+                     font-size: 9px;
+                    }
                     &:hover{
                         background-color: $secondary-color;
                         color: $photo-background-color;
@@ -86,7 +112,7 @@
              z-index: 2;
              position: absolute;
              top: 50%;
-             transform: translate(0%, 50%);
+             transform: translate(0%, 0%);
              left: calc((110px * 100%) / 1920px);
              cursor: pointer;
             }
@@ -96,7 +122,7 @@
                 position: absolute;
                 right: calc((110px * 100%) / 1920px);
                 top: 50%;
-                transform: translate(0%, 50%);
+                transform: translate(0%, 0%);
                 cursor: pointer;
                }
             }

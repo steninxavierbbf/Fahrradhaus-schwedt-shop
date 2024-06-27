@@ -1,0 +1,11 @@
+@import '../../styles/styles.scss';
+
+.main-container{
+    @include flex(row,center,center);
+    .line{
+        @include mobile-content-width;
+        background-color: $text-color;
+        height: 1px;
+    }
+
+}

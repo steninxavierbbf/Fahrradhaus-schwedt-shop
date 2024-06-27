@@ -14,9 +14,16 @@
         @include flex(column,center,center);
         gap: 50px;
         color: $text-color;
+        @include responsive(smartphone-portrait){
+            padding-bottom: 50px;
+        }
         .title{
     font-size: 45px;
     font-family: 'montserrat-bold';
+    @include responsive(smartphone-portrait){
+        font-size: 20px;
+        margin-top: 74px;
+    }
         }
         .item-slider {
             padding: 0px 5px;
@@ -25,17 +32,28 @@
             display: flex;
             position: relative;
             @include content-width;
+            @include responsive(smartphone-portrait){
+                @include mobile-content-width;
+                padding: 0px;
+                display: block;
+            }
             .left-arrow{
                 img{
                 @include arrow-size;
                 margin-right: 15px;
                 }
-
+            @include responsive(smartphone-portrait){
+                display: none;
+                
+            }
             }
             .right-arrow{
                 img{
                     @include arrow-size;
                     margin-left: 15px;
+                }
+                @include responsive(smartphone-portrait){
+                    display: none;
                 }
             }
             .is-disabled-hide{
@@ -50,13 +68,24 @@
                 overflow-y: hidden;
                scroll-behavior: smooth;
                  gap: 20px;
+                 @include responsive(smartphone-portrait){
+                    display: flex;
+                    flex-direction: column;
+                    padding: 0px;
+                 }
                  .picture{
                 height: 412px;
-                width: 471px;
+                width: 100%;
                 background-color: $secondary-color;
                 @include flex(column,center,center);
                 gap: 20px;
                 padding: 20px;
+                @include responsive(smartphone-portrait){
+                    height: 282px;
+            padding: 0px;
+            gap: 10px;
+            padding-bottom: 20px;
+                }
                     img{
                         height: 240px;
                         width: 382px;
@@ -67,14 +96,24 @@
                         &:hover{
                         transform: scale(1.1); 
                         }
+                        @include responsive(smartphone-portrait){
+                            height: 164px;
+                            width: 262px;
+                        }
                     }
                                 .light-heading{
                     font-size: 20px;
                    font-family: 'montserrat-regular';
+                   @include responsive(smartphone-portrait){
+                    font-size: 15px;
+                   }
                 }
                 .main-heading{
                   font-size: 40px;
                   font-family: 'montserrat-regular';  
+                  @include responsive(smartphone-portrait){
+                    font-size: 30px;
+                  }
                 }
                  }
     
@@ -83,9 +122,9 @@
 
               button{
         @include responsive(smartphone-portrait){
-            width: 150px;
-            height: 27px;
-            font-size: 10px;
+            width: 119px;
+            height: 26px;
+            font-size: 9px;
         }
         font-size: 13px;
         font-family: 'montserrat-bold';

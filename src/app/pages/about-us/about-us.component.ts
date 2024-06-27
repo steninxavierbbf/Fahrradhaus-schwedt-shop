@@ -1,12 +1,13 @@
-import { NgFor } from '@angular/common';
+import { NgFor, NgIf } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { MobileLineDividerComponent } from "../../mobile-line-divider/mobile-line-divider.component";
 
 @Component({
-  selector: 'app-about-us',
-  standalone: true,
-  imports: [NgFor],
-  templateUrl: './about-us.component.html',
-  styleUrl: './about-us.component.scss'
+    selector: 'app-about-us',
+    standalone: true,
+    templateUrl: './about-us.component.html',
+    styleUrl: './about-us.component.scss',
+    imports: [NgFor, MobileLineDividerComponent,NgIf]
 })
 export class AboutUsComponent implements OnInit {
 ngOnInit(): void {

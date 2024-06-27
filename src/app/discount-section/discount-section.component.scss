@@ -4,35 +4,30 @@
     padding-bottom: 100px
 ;    @include flex(row,center,center);
     .content-section{
-        @include responsive(smartphone-portrait){
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
         background-color: $secondary-color;
         height: 466px;
         color: $text-color;
      display: grid;
      grid-template-columns: repeat(10,1fr);
         @include content-width;
+        @include responsive(smartphone-portrait){
+        display: flex;
+        flex-direction: column;
+        @include mobile-content-width;
+        background-color: transparent;
+        }
         .image-section{
             background-color: $photo-background-color;
             height: 100%;
-            @include responsive(smartphone-portrait){
-               height: 234px;
-               width: 322px; 
-            }
-
             img{
-                @include responsive(smartphone-portrait){
-                    width: 241px;
-                    height: 151px;
-                    object-fit: contain;
-                }
                 width: 478px;
                 height: 300px;
                 object-fit: contain;
+                @include responsive(smartphone-portrait){
+                    width: 240px;
+                    height: 150px;
+                    padding: 40px 0px 40px 0px;
+                }
             }
             grid-column-start: 1;
             grid-column-end: 6;
@@ -42,35 +37,41 @@
             grid-column-start:7;
             grid-column-end: 10;
             @include responsive(smartphone-portrait){
-padding: 25px;
+           padding: 25px;
+           height: 352px;
+           background-color: $secondary-color
             }
             @include flex(row,center,center);
             .smaller-headline{
-                @include responsive(smartphone-portrait){
-                font-size: 15px;
-                }
                font-size: 16px;
                font-family: 'montserrat-bold';
+               @include responsive(smartphone-portrait){
+                font-size: 15px;
+               }
             }
             .bigger-headline{
                 font-size: 45px;
                 font-family: 'montserrat-regular';
-                padding-top: 20px;            
-                 @include responsive(smartphone-portrait){
-                    font-size: 30px;
-                 }
+                padding-top: 20px;  
+            @include responsive(smartphone-portrait){
+                font-size: 30px;
+            }
+            }
             }
             ul{
                 @include flex(column,start,start);
                 gap: 10px;
                 margin: 0px;
                 padding: 45px 0px;
+                @include responsive(smartphone-portrait){
+                    padding: 30px 0px;
+                }
                 li{
                  list-style-type: none;
                  font-size: 15px;
                  font-family: 'montserrat-regular';
                  @include responsive(smartphone-portrait){
-                    font-size: 13px;
+                    font-size: 13px
                  }
                 }
             }
@@ -100,4 +101,3 @@ padding: 25px;
         }
     }
    
-}

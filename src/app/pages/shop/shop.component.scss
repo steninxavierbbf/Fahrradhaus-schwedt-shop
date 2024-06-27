@@ -5,6 +5,9 @@
     color: $secondary-color;
     position: absolute;
     font-family: 'montserrat-bold';
+    @include responsive(smartphone-portrait){
+        font-size: 45px;
+    }
 }
 
 @mixin bike-section-image($backgroundcolor){
@@ -19,6 +22,18 @@
        z-index: 2;
        object-fit: contain;
        padding-top: 8%;
+       @include responsive(smartphone-portrait){
+        height: 220px;
+        width: 280px;
+       }
+
+    }
+  
+    @include responsive(smartphone-portrait){
+        width: 100%;
+        height: 270px;
+        
+        
     }
     .text{
        font-size: 140px;
@@ -26,50 +41,89 @@
        font-family: "montserrat-bold";
        position: absolute;
        z-index: 1;
-       top: 2%
+       top: 2%;
+      @include responsive(smartphone-portrait){
+        font-size: 85px;
+      }
     }
 }
 .main-container{
     min-height: calc(100vh - 120px);
     padding-top: 120px;
+    @include responsive(smartphone-portrait){
+        padding-top: 80px;
+    }
     .banner{
         background-color: $photo-background-color;
         height: calc(100vh - 120px);
         @include flex(row,center,center);
+        @include responsive(smartphone-portrait){
+            height: 270px;
+        }
         position: relative;
         img{
             height: 590px;
             width: 934px;
-            z-index: 2
+            z-index: 2;
+            @include responsive(smartphone-portrait){
+                height: 164px;
+                width: 262px;
+                object-fit: contain;
+                padding-top: 10%;
+               }
         }
         .text1{
 @include banner-text;
 top: 12%;
-left: 22%
+left: 22%;
+@include responsive(smartphone-portrait){
+    left: 8%;
+    top: 22%
+}
         }
         .text2{
 @include banner-text;
 z-index: 2;
 top: 32%;
 left: 26%;
+@include responsive(smartphone-portrait){
+    left: 15%;
+    top: 42%;
+}
         }
     }
     .content-section{
         background-color: $page-background-color;
         @include flex(column,center,center);
+        overflow: hidden;
+    
         .logo-container{
             @include content-width;
+            @include responsive(smartphone-portrait){
+                @include mobile-content-width;
+                flex-wrap: wrap;
+                padding: 20px 0px;
+                height: 200px;
+            }
             padding: 80px 0px;
             @include flex(row,space-between,center);
             position: relative;
             .logo-section{
                 @include flex(row,center,center);
                 position: relative;
+                @include responsive(smartphone-portrait){
+                    @include flex(row,center,center);
+              
+                }
                 img{
                     height: 84px;
                     width: 93px;
                     object-fit: contain;
                     cursor: pointer;
+                    @include responsive(smartphone-portrait){
+                        height: 60px;
+                        width: 70px;
+                    }
                 }
                 .gray{
                     position: absolute;
@@ -86,15 +140,35 @@ left: 26%;
         .bikes-container{
              @include content-width;
              color: $text-color;
+             @include responsive (smartphone-portrait){
+                width: 100%;
+
+             }
            .main-container-bike{
             @include flex (row,center,center);
             height: 430px;
             background-color: $secondary-color;
+            @include responsive(smartphone-portrait){
+           height: 100%;
+        @include flex(column,center,center);
+        &:has(.image-section-yellow){
+            @include flex(column-reverse,center,center);
+        }
+        
+            }
             .image-section{
              @include bike-section-image(#B1B1B1)
             }
             .text-section-bikes{
                 @include flex (column,start,start);
+                @include responsive(smartphone-portrait){
+                    @include flex(row,space-between,center);
+                    flex-wrap: wrap;
+            @include mobile-content-width;
+            padding: 20px 0px;
+              
+    
+                }
                 gap: 20px;
                 width: 50%;
                 .parent-section{
@@ -106,12 +180,20 @@ left: 26%;
                     font-family: "montserrat-bold";
                     font-size: 20px;
                     cursor: pointer;
+                    @include responsive(smartphone-portrait){
+                        padding-left: 0px;
+                        font-size: 15px;
+                        width: 100px;
+                    }
                    }
                    img{
                     height: 23px;
                     width: 23px;
                     opacity: 0;
                     transition: opacity 0.3s ease-in-out;
+                    @include responsive(smartphone-portrait){
+                        display: none;
+                    }
                    }
                    .category-section:hover + img{
                     opacity: 1;
@@ -120,11 +202,18 @@ left: 26%;
            }
         }
         .image-section-yellow{
-            @include bike-section-image(#F7A85C)
+            @include bike-section-image(#F7A85C); 
         }
         .bottom-section{
             @include content-width;
             @include flex(row,center,center);
+            @include responsive(smartphone-portrait){
+                @include flex(column,center,center);
+                width: 100%;
+                height: 160px;
+                padding: 110px 0px;
+                margin: 82px 0px;
+            }
             height: 260px;
             padding-bottom: 90px;
             .title-section{
@@ -134,10 +223,17 @@ left: 26%;
               color: $secondary-color;
               height: 100%;
               width: 50%;
+              @include responsive(smartphone-portrait){
+         width: 100%;
+         font-size: 45px;
+              }
               .title{
                 padding: 30px 0px 0px 30px;
                 .title2{
                   padding-left: 60px;
+                  @include responsive(smartphone-portrait){
+                    padding-bottom: 30px;
+                  }
                 }
               }
       
@@ -147,22 +243,44 @@ left: 26%;
                 background-color: $secondary-color;
                 height: 100%;
                 @include flex(column,center,start);
+                @include responsive(smartphone-portrait){
+                    padding: 50px 0px;
+                    width: 100%;
+                    height: 380px;
+                    @include flex(column,center,center);
+                }
                 .texts{
                     padding: 0px 50px;
                     @include flex(column,center,start);
                     gap: 40px;
+                    @include responsive(smartphone-portrait){
+                        @include mobile-content-width;
+                 
+                        @include flex(column,center,center);
+                    }
+               
                     .text1{
                         font-size: 13px;
                         font-family: "montserrat-regular";
                         line-height: 25px;
+                        @include responsive(smartphone-portrait){
+                            font-size: 15px;
+                        }
                       }
                       .text2{
                         @include flex(row,center,center);
                         gap: 10px;
+                        @include responsive(smartphone-portrait){
+                            @include flex(row,start,start);
+                            width: 100%;
+                        }
                         .link{
                             font-size: 20px;
                             font-family: "montserrat-bold";
                             cursor: pointer;
+                            @include responsive(smartphone-portrait){
+                                font-size: 15px;
+                            }
                         }
                         img{
                             height: 23px;
@@ -184,9 +302,16 @@ left: 26%;
             @include content-width;
             gap: 80px;
             padding-bottom: 80px;
+            @include responsive(smartphone-portrait){
+                gap: 50px;
+                padding-top: 70px;
+            }
             .highlight-headline{
           font-size: 45px;
           font-family: "montserrat-bold";
+          @include responsive(smartphone-portrait){
+            font-size: 20px;
+          }
             }
             .bike-display-section{
                 @include flex(row,space-between,center);
@@ -198,6 +323,11 @@ left: 26%;
                     width: 629px;
                 @include flex(column,center,center);
                 gap: 25px;
+                @include responsive(smartphone-portrait){
+                    height: 282px;
+                    width: 323px;
+                    gap: 15px;
+                }
                     img{
                         height: 322px;
                         width: 513px;
@@ -207,14 +337,24 @@ left: 26%;
                         &:hover{
                             transform: scale(1.1);
                         }
+                        @include responsive(smartphone-portrait){
+                            height: 164px;
+                            width: 262px;
+                        }
                     }
                     .small-heading{
                      font-size: 20px;
                      font-family: "montserrat-regular";
+                     @include responsive(smartphone-portrait){
+                        font-size: 15px;
+                     }
                     }
                     .main-heading{
                         font-size: 40px;
-                        font-family: "montserrat-regular";               
+                        font-family: "montserrat-regular"; 
+                        @include responsive(smartphone-portrait){
+                            font-size: 30px;
+                         }              
                     }
                 }
             }

@@ -4,7 +4,10 @@
   width: 42px;
   height: 42px;
   border-radius: 50%;
- 
+ @include responsive (smartphone-portrait){
+  width: 30px;
+  height: 30px;
+ } 
   &:hover{
     box-shadow: 0 0 3px black;
     border: 3px solid #FFF;
@@ -38,6 +41,10 @@
     transition: all 1s ease;
     .menu-item{
         cursor: pointer;
+
+    }
+    @include responsive(smartphone-portrait){
+      display: none;
     }
  
   }
@@ -45,59 +52,107 @@
     height: 80px;
     @include flex (row,center,center);
     padding-bottom: 0px;
+    @include responsive(smartphone-portrait){
+      display: none
+    }
   }
 
 .breadcrumbs-section{
     @include flex(row,center,center);
     margin-top: 280px;
-  
+  @include responsive(smartphone-portrait){
+    margin-top: 40px;
+  }
     
     .breadcrumbs{
-        
         @include flex(row,start,center);
         gap: 40px;
         @include content-width;
         font-size: 13px;
         font-family: 'montserrat-regular';
+        @include responsive(smartphone-portrait){
+          @include mobile-content-width;
+        }
+        .right{
+          @include flex(row,start,center);
+          .last{
+            color: $brand-color
+          }
+        }
+
 }
   }
   .bike-details-container{
     @include flex(row,center,center);
+@include responsive(smartphone-portrait){
+  width: 100%;
+  padding-bottom: 35px;
+}
     margin-top: 40px;
     padding-bottom: 140px;
     .bike-details{
         @include content-width;
         @include flex(row,center,center);
+        @include responsive(smartphone-portrait){
+          @include flex(column,center,center);
+ gap: 50px;
+        }
         gap: 140px;
         .photo-section{
             @include flex(column,start,start);
             gap: 15px;
+            @include responsive(smartphone-portrait){
+         gap: 10px;
+         @include mobile-content-width;
+         @include flex(column,center,center);
+            }
             .main-image{
              height: 469px;
              width: 624px;
              background-color: $secondary-color;
              @include flex(row,center,center);
+             @include responsive (smartphone-portrait){
+              height: 242px;
+              width: 100%;
+             }
              img{
                 height: 318px;
                 width: 506px;
                 object-fit: contain;
+                @include responsive(smartphone-portrait){
+                  height: 163px;
+                  width: 261px;
+                }
              }
             }
             .child-images{
-    @include flex(row,center,center);
+    @include flex(row,start,start);
     cursor: pointer;
+    width: 100%;
     gap: 15px;
+    @include responsive(smartphone-portrait){
+      @include mobile-content-width;
+      gap: 10px;
+    }
     img{
         height: 166px;
         width: 175px;
         object-fit: contain;
         background-color: $secondary-color;
         padding: 30px;
+        @include responsive(smartphone-portrait){
+          height: 105px;
+          width: 113px;
+          padding: 22px
+        }
     }
             }
         }
         .details-section{
           @include flex(column,start,start);
+          @include responsive(smartphone-portrait){
+            @include mobile-content-width;
+          }
           .brand-name{
            font-size: 20px;
            font-family: 'montserrat-bold';
@@ -174,9 +229,20 @@
           width: calc(406px - 30px);
           height: 65px;
           font-size: 17px;
+          @include responsive(smartphone-portrait){
+            @include mobile-content-width;
+            padding: 0px;
+            p{
+              margin: 0px 30px ;
+            }
+           
+          }
           font-family: 'montserrat-regular';
           margin-bottom: 30px;
           .counter{
+            @include responsive(smartphone-portrait){
+              margin: 0px 30px ;
+            }
             @include flex(row,center,center);
             gap: 10px;
             font-family: 'montserrat-bold';
@@ -191,6 +257,11 @@
           }
           }
           button{
+            @include responsive(smartphone-portrait){
+              @include responsive(smartphone-portrait){
+                @include mobile-content-width;
+              }
+            }
             width: 406px;
             height: 47px;
             color: $secondary-color;
@@ -208,42 +279,77 @@
       }
   }
 .bike-features{
-  background-color: $secondary-color;
+
+  @include flex(row,center,center);
+@include responsive(smartphone-portrait){
+  padding-bottom: 95px;
+}
+  .bike-features-container{
+    background-color: $secondary-color;
+    @include responsive(smartphone-portrait){
+      @include mobile-content-width;
+padding: 20px 0px;
+
+@include flex(column,start,start);
+    }
   padding: 95px 0px;
-  @include flex(column,center,center);
-  .headline{
-    font-size: 20px;
-    font-family: 'montserrat-bold';
-    padding-bottom: 55px;
-  }
-  .bike-headline{
-    font-size: 45px;
-    font-family: 'montserrat-regular';
-  }
-  .gear{
+    width: 100%;
+    @include flex(column,center,center);
+    .headline{
+      font-size: 20px;
+      font-family: 'montserrat-bold';
+      padding-bottom: 55px;
+   @include responsive(smartphone-portrait){
+    padding-bottom: 20px;
     font-size: 15px;
-    font-family: 'montserrat-regular';
-    padding: 30px 0px 60px 0px;
-  }
-  .features{
-    @include flex(column,start,start);
-    height: 315px;
-    width: 650px;
-    gap: 30px;
-    flex-wrap: wrap;
-    .property{
-      @include flex(row,center,center);
-      gap: 5px;
-      .key{
-        font-size: 15px;
-        font-family: 'montserrat-bold';
+    margin: 0px 20px;
+   }
+    }
+    .bike-headline{
+      font-size: 45px;
+      font-family: 'montserrat-regular';
+      @include responsive(smartphone-portrait){
+        font-size: 30px;
+        margin: 0px 20px;
+       }
+    }
+    .gear{
+      font-size: 15px;
+      font-family: 'montserrat-regular';
+      padding: 30px 0px 60px 0px;
+      @include responsive(smartphone-portrait){
+        padding: 20px 0px 20px 0px;
+        margin: 0px 20px;
       }
-      .value{
-        font-size: 15px;
-        font-family: 'montserrat-regular';
+    }
+    .features{
+      @include flex(column,start,start);
+      height: 315px;
+      width: 650px;
+      gap: 30px;
+      flex-wrap: wrap;
+      @include responsive(smartphone-portrait){
+        flex-wrap: nowrap;
+        width: 100%;
+        gap: 20px;
+        height:auto;
+        margin: 0px 20px;
+      }
+      .property{
+        @include flex(row,center,center);
+        gap: 5px;
+        .key{
+          font-size: 15px;
+          font-family: 'montserrat-bold';
+        }
+        .value{
+          font-size: 15px;
+          font-family: 'montserrat-regular';
+        }
       }
     }
   }
+
 
 }
 .widget{

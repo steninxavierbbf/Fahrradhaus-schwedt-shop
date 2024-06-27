@@ -40,11 +40,16 @@
         <div class="headline">UNSERE FAHRRADMARKEN</div>
         <div class="brand-section" *ngFor="let brand of brands let i=index" [class.brand-reverse]="i %2!==0">
             <div class="description">
-           <img src={{brand.logo}} alt="logo" class="logo">
+            <div class="logo-brand"><img src={{brand.logo}} alt="logo"></div>
+           <div class="mobile-image"><img src={{brand.image}} alt="brand-image"></div>
+        
                 <div class="text" [innerHTML]="brand.description"></div>
                 <div class="link">{{brand.website}}</div>
             </div>
-            <img src={{brand.image}} alt="brand-image">
+            <div class="desktop-image"><img src={{brand.image}} alt="brand-image"></div>
+
+            <div class="line" *ngIf="i!==2"><app-mobile-line-divider></app-mobile-line-divider></div>
+            
         </div>
     </div>
     </div>

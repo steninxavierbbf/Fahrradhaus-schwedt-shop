@@ -7,13 +7,14 @@ import { DiscountSectionComponent } from "../../discount-section/discount-sectio
 import { HomeSmallSliderComponent } from "../../home-small-slider/home-small-slider.component";
 import { HomepageAboutComponent } from "../../homepage-about/homepage-about.component";
 import { ScrollToTopComponent } from "../../scroll-to-top/scroll-to-top.component";
+import { MobileLineDividerComponent } from "../../mobile-line-divider/mobile-line-divider.component";
 
 @Component({
     selector: 'app-home-page',
     standalone: true,
     templateUrl: './home-page.component.html',
     styleUrl: './home-page.component.scss',
-    imports: [HeaderComponent, MainHomepageSliderComponent, HomeGalleryComponent, FooterComponent, DiscountSectionComponent, HomeSmallSliderComponent, HomepageAboutComponent, ScrollToTopComponent]
+    imports: [HeaderComponent, MainHomepageSliderComponent, HomeGalleryComponent, FooterComponent, DiscountSectionComponent, HomeSmallSliderComponent, HomepageAboutComponent, ScrollToTopComponent, MobileLineDividerComponent]
 })
 export class HomePageComponent implements OnInit {
 

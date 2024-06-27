@@ -10,11 +10,41 @@
                 <li [routerLink]="['shop']" routerLinkActive="active">SHOP</li>
                 <li [routerLink]="['termin-buchen']" routerLinkActive="active">TERMIN BUCHEN</li>
              </ul>
+
         </div>
         <div class="icons">
             <img src="assets/icons/shopping_cart_icon.png" alt="cart" [routerLink]="['checkout']">
             <img src="assets/icons/search_icon.png" alt="search">
         </div>
     </div>
+
 </nav>
 
+<div class="mobile-menu" [class.height-full]="isMenuOpen">
+    <div class="content-section">
+        <div class="top-section">
+            <div class="burger-menu" (click)="toggleMenu()">
+                <img src='{{isMenuOpen?"assets/icons/cross.png":"assets/icons/burger.png"}}' alt="burger">
+            </div>
+            <div class="logo" ><img src="assets/images/radprofis_logo.png" alt="logo" [class.smallerLogo]="isScrolled"  [routerLink]="['']" routerLinkActive="active"></div>
+            <div class="cart"><img src="assets/icons/shopping_cart_icon.png" alt="cart"></div>
+         
+        </div>
+        <div class="bottom-section" [class.is-open]="isMenuOpen">
+            <ul>
+                <li [routerLink]="['']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" (click)="closeMenu()">HOME</li>
+                <li [routerLink]="['fahrradverleih']" routerLinkActive="active" (click)="closeMenu()">FAHRRADVERLEIH</li>
+                <li [routerLink]="['service-leistungen']" routerLinkActive="active" (click)="closeMenu()">SERVICE & LEISTUNGEN</li>
+                <li [routerLink]="['uber-uns']" routerLinkActive="active" (click)="closeMenu()">ÜBER UNS</li>
+                <li [routerLink]="['shop']" routerLinkActive="active" (click)="closeMenu()">SHOP</li>
+                <li [routerLink]="['termin-buchen']" routerLinkActive="active" (click)="closeMenu()">TERMIN BUCHEN</li>
+            </ul>
+            <div class="info-section">
+                <div class="tel">Tel. 03361/32019</div>
+                <div class="email">info&#64;radprofis-am-bahnhof.de</div>
+            </div>
+        </div>
+      
+    </div>
+
+ </div>

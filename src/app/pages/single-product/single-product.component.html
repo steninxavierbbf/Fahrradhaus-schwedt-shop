@@ -7,7 +7,10 @@
     <div class="breadcrumbs-section">
     <div class="breadcrumbs">
             <div class="left">< Übersicht</div>
-            <div class="right">Fahrräder > City</div>
+            <div class="right">            
+                <div class="first">Fahrräder > </div>
+            <div class="last">City</div></div>
+
         </div>
 
     </div>   
@@ -44,19 +47,22 @@
     </div>
 
     <div class="bike-features">
-        <div class="headline">BESCHREIBUNG</div>
-        <div class="bike-headline">CITYRAD BBF BRÜGGE 1.0</div>
-        <div class="gear">7-Gang ND Wave</div>
-        <div class="features">
-            <div class="property" *ngFor="let property of properties">
-                <div class="key">{{property.key}}</div>
-                :
-                <div class="value">{{property.value}}</div>
-            </div>
-        </div>                  
-    </div>
-    <div class="blur" *ngIf="isCLicked && isScrolled"></div>
-     <div class="widget" *ngIf="isCLicked && isScrolled">
-        <app-cart-widget></app-cart-widget>
-     </div>
+        <div class="bike-features-container">
+            <div class="headline">BESCHREIBUNG</div>
+            <div class="bike-headline">CITYRAD BBF BRÜGGE 1.0</div>
+            <div class="gear">7-Gang ND Wave</div>
+            <div class="features">
+                <div class="property" *ngFor="let property of properties">
+                    <div class="key">{{property.key}}</div>
+                    :
+                    <div class="value">{{property.value}}</div>
+                </div>
+            </div>                  
+        </div>
+        <div class="blur" *ngIf="isCLicked && isScrolled"></div>
+         <div class="widget" *ngIf="isCLicked && isScrolled">
+            <app-cart-widget></app-cart-widget>
+         </div>
+        </div>
+
 </div>

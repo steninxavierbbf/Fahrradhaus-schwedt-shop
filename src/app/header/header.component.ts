@@ -11,6 +11,13 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 })
 export class HeaderComponent implements OnInit{
   isScrolled:boolean=false;
+  isMenuOpen= false;
+  toggleMenu():void{
+    this.isMenuOpen= !this.isMenuOpen;
+  }
+  closeMenu(){
+    this.isMenuOpen=false;
+  }
   ngOnInit(): void {}
  @HostListener('document:scroll')
  scrollFunction(){

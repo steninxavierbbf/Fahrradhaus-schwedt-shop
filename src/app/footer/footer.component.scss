@@ -5,24 +5,75 @@ footer{
     color: $secondary-color;
     background-color: $footer-background;
     @include flex(row,center,center);
+    @include responsive(smartphone-portrait){
+        height: auto;
+        padding: 30px 0px 30px 0px;
+    }
     .main-container{
       @include content-width;
       @include flex(column,space-between,normal);
       gap: 30px;
+      @include responsive(smartphone-portrait){
+        @include mobile-content-width;
+      }
+
       .section1{
    @include flex(row,space-between,start);
+   @include responsive(smartphone-portrait){
+    @include flex(column-reverse,center,space-between);
+    
+
+   }
         img{
             object-fit: contain;
             height: 188px;
             width: 188px;
+            @include responsive(smartphone-portrait){
+                display: none
+            }
         }
 
             ul{
                 @include flex(column,start,start);
                 gap:20px ;
+                padding: 0px;
+                .mobile-section{
+                    @include flex(row,space-between,start);
+                    .section-first{
+                        @include flex(column,start,start);
+                        gap:20px ;
+                        li{
+                            line-height: 25px;
+                        }
+                    }
+                }
+                @include responsive(smartphone-portrait){
+                    gap: 10px;
+                    .mobile-section{
+                        @include flex(row,space-between,start);
+                        .section-first{
+                            @include flex(column,start,start);
+                            gap: 10px;
+                        }
+                    }
+                }
                 span{
                     font-size: 20px;
                     font-family: "montserrat-bold";
+                    @include responsive(smartphone-portrait){
+                        font-size: 15px;
+         
+                    }
+                }
+                img{
+                    display: none;
+                    @include responsive(smartphone-portrait){
+                        height: 120px;
+                        width: 120px;
+                        display: block;
+                        object-fit: contain;
+                    }
+
                 }
                 li{
                     list-style-type: none;
@@ -45,18 +96,39 @@ footer{
         height: 2px;
         width: 100%;
         background-color: $secondary-color;
+        @include responsive(smartphone-portrait){
+  display: none;
+        }
       }
       .section2{
         @include flex (row,space-between,end);
         font-size: 13px;
         font-family: "montserrat-regular";
+        @include responsive(smartphone-portrait){
+            @include flex (column-reverse,space-between,start);
+            gap:5px; 
+        }
+        .left{
+            @include responsive(smartphone-portrait){
+                padding: 10px 0px 30px 0px;
+            }
+        }
         .right{
             @include flex(row,center,center);
              gap: 5px;
+             @include responsive(smartphone-portrait){
+                @include flex(column,start,start);
+                padding-top: 80px;
+                .divider{
+                    display: none;
+                }
+             }
+
             li{
                 list-style-type: none;
                 cursor: pointer;
             }
+
         }
 
       }

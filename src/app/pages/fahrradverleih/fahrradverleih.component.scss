@@ -3,6 +3,9 @@
 .main-container{
     min-height: calc(100vh - 120px);
     padding-top: 120px;
+    @include responsive(smartphone-portrait){
+        padding-top: 80px;
+    }
     .banner{
         height: 550px;
         background-color: $banner-background-color;
@@ -10,6 +13,10 @@
         font-size: 100px;
         color: $secondary-color;
         @include flex (column,center,center);
+        @include responsive(smartphone-portrait){
+            font-size: 30px;
+            height: 220px;
+        }
         .text1{
            padding-right: 15%;
         }
@@ -22,18 +29,32 @@
         padding: 200px 0px;
         background-color: $page-background-color;
         color: $text-color;
+        @include responsive(smartphone-portrait){
+            padding: 40px 0px;  
+        }
         .sections{
             @include content-width;
             @include flex(row,center,center);
+            @include responsive(smartphone-portrait){
+                @include flex(column,start,start);
+                @include mobile-content-width
+            }
             img{
                 width: 635px;
                 height: 445px;
-                object-fit: cover
+                object-fit: cover;
+                @include responsive(smartphone-portrait){
+                    width: 321px;
+                    height: 214px
+                }
             }
             .text-section{
                 @include flex(column,start,start);
                 padding: 85px;
                 gap: 25px;
+                @include responsive(smartphone-portrait){
+            padding: 40px 0px;
+                }
             }
             .headline{
                 font-size: 20px;
@@ -49,6 +70,9 @@
         }
         .reverse-section{
             @include flex(row-reverse,center,center);
+            @include responsive(smartphone-portrait){
+                @include flex(column,start,start);
+            }
         }
     }
 

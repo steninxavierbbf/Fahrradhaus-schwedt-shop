@@ -4,6 +4,9 @@
     min-height: calc(100vh - 120px);
     padding-top: 120px;
     color: $text-color;
+    @include responsive(smartphone-portrait){
+        padding-top: 80px;
+    }
     .banner{
         height: 550px;
         background-color: $banner-background-color;
@@ -11,19 +14,34 @@
         font-size: 100px;
         color: $secondary-color;
         @include flex (column,center,center);
+        @include responsive(smartphone-portrait){
+            font-size: 30px;
+            height: 220px;
+        }
     }
     .content-section{
         background-color: $page-background-color;
         color: $text-color;
         @include flex(column,center,center);           ;
         .content-section1{
-            @include flex(row,space-between,center);
+            @include flex(row,space-between,start);
             @include content-width;
             padding: 115px 0px ;
+            @include responsive(smartphone-portrait){
+                padding: 40px 0px;
+                @include flex(column,start,start);
+                gap: 45px; 
+                @include mobile-content-width;
+         
+            }
             .item{
                 @include flex(column,start,start);
                 width: 500px;
                 gap: 25px;
+                @include responsive(smartphone-portrait){
+                    width: 100%;
+                    gap: 45; 
+                }
                 .heading{
                     font-size: 20px;
                     font-family: 'montserrat-bold';
@@ -40,35 +58,54 @@
             background-color: $secondary-color;
             width: 100%;
             @include flex(row,center,center);
+          @include responsive(smartphone-portrait){
+            padding: 40px 0px;
+          }
             .content-section{
                 @include flex(row,space-between,center);
                 @include content-width;
                 background-color: $secondary-color;
+                @include responsive(smartphone-portrait){
+                    @include flex(column,start,start);
+                    @include mobile-content-width
+                }
                 .map{
                     img{
                         height: 625px;
                         width: 625px;
+                        @include responsive(smartphone-portrait){
+                            width: 100%;
+                            height: 323px;
+                        }
                     }
                 }
                 .contact-details{
                     width: 515px;
                     @include flex(column,start,start);
                     gap: 30px;
+
+                    @include responsive(smartphone-portrait){
+                        width: 100%;
+                    }
                     .headline{
                         font-size: 20px;
                         font-family: 'montserrat-bold';
+                        @include responsive(smartphone-portrait){
+                            padding-top: 40px;
+                        }
                     }
                     .layer{
                         font-family: 'montserrat-regular';
                         font-size: 15px;
                         line-height: 25px;
                     }
-                    .layer:nth-child(3){
+                    .layer:nth-child(3),.layer:nth-child(4){
                         line-height: 50px;
+                        @include responsive(smartphone-portrait){
+                            line-height: 25px;
+                        }
                     }
-                    .layer:nth-child(4){
-                        line-height: 50px;
-                    }
+         
     
                 }
             }
@@ -78,41 +115,101 @@
             @include content-width;
             @include flex(column,center,center);
             gap: 100px;
+            @include responsive(smartphone-portrait){
+                @include mobile-content-width;
+                padding: 65px 0px;
+                gap: 30px;
+            }
             .headline{
                 font-size: 45px;
                 font-family: 'montserrat-bold';
+                @include responsive(smartphone-portrait){
+                    font-size: 20px
+                }
             }
             .brand-section{
                 @include flex(row,space-between,center);
                 gap: 60px;
+                @include responsive(smartphone-portrait){
+                    @include flex(column,start,start);
+                    gap: 30px;
+                }
+                .line{
+                    display: none;
+                    @include responsive(smartphone-portrait){
+                        display: block
+                    }
+                }
               .description{
                 @include flex(column,start,start);
                 gap: 50px;
                 width: 50%;
-                .logo{
-                   width: 242px;
-                   height: 128px;
-                   object-fit: contain;
+                @include responsive(smartphone-portrait){
+                    width: 100%;
+                    @include flex(column,center,center);
+                    gap: 20px;
+                }
+                .logo-brand{
+                    img{
+                        width: 242px;
+                        height: 128px;
+                        object-fit: contain;
+                        @include responsive(smartphone-portrait){
+                            width: 100px;
+                            height: 90px;
+                        }
+                    }
+
+
+                }
+                .mobile-image{
+                    width: 100%;
+                    img{
+                        display: none;
+                        @include responsive(smartphone-portrait){
+                            width: 100%;
+                            height: 232px;
+                            display: block;
+                            object-fit: cover;
+                        }
+                    }
                 }
                 .text{
                    font-size: 15px;
                    font-family: 'montserrat-regular';
                    line-height: 25px;
                 }
+
                 .link{
                     font-size: 20px;
                     font-family: 'montserrat-bold';
                     cursor: pointer;
+                    @include responsive(smartphone-portrait){
+                        text-align: left;
+                        font-size: 15px;
+                        width: 100%;
+                    }
                 }
               }
-              img{
-                height: 620px;
+              .desktop-image{
                 width: 50%;
-                object-fit: cover;
+                display: block;
+                @include responsive(smartphone-portrait){
+                    display: none;
+                }
+                img{
+                    height: 620px;
+                    width: 100%;
+                    object-fit: cover;
+                  }
               }
+
             }
             .brand-reverse{
                 @include flex(row-reverse,center,center);
+                @include responsive(smartphone-portrait){
+                    @include flex( column,start,start)
+                }
             }
         }
 

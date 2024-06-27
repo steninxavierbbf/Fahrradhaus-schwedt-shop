@@ -1,7 +1,16 @@
 @import '../../../styles/styles.scss';
 .full-section{
     margin-top: 120px;
+    @include responsive(smartphone-portrait){
+    margin-top: 80px;
+    }
     .sections{
         background-color: $page-background-color;
+   }
+   .line{
+    display: none;
+    @include responsive(smartphone-portrait){
+        display: block;
+    }
    }
 }

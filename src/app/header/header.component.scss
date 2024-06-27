@@ -11,7 +11,11 @@ nav{
     width: 100%;
     font-size: 13px;
     font-family: "montserrat-bold";
+    @include responsive(smartphone-portrait){
+      display: none
+    }
     .main-container{
+
      @include content-width;
      @include flex(row,space-between,center);
      z-index: 3;
@@ -19,6 +23,7 @@ nav{
       color: $brand-color;
     }
      .menuitems-logo{
+
         ul{
             @include flex(row,center,center);
             gap: 65px;
@@ -32,7 +37,7 @@ nav{
               height: 196px;
               width: 196px;
               top: 50%;
-              transform: translate(0%, 30%);
+              transform: translate(0%, 20%);
               border: 15px solid white;
               border-radius: 50%;
               object-fit: contain;
@@ -61,4 +66,113 @@ nav{
         }
      }
     }
+    
 }
+
+  .mobile-menu{
+    background-color: $secondary-color;
+    height: 80px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    padding: 0px;
+    margin: 0px;
+   width: 100%;
+
+   @include flex(row,center,start);
+   &.height-full{
+    height: 100vh;
+  
+   }
+    .content-section{
+      .active{
+        color: $brand-color;
+     
+      }
+      
+      @include mobile-content-width;
+      .top-section{
+        @include flex(row,space-between,center);
+          height: 80px;
+      .burger-menu{
+        img{
+          width: 20px;
+          height: 20px;
+          object-fit: contain;
+          cursor: pointer;
+          transition: all .3s ease-in-out;
+        }
+    
+      }
+      .logo{
+        img{
+          height: 114px;
+          width: 114px;
+          object-fit: contain;
+          top: 50%;
+          transform: translate(0%, 30%);
+          border: 5px solid white;
+          border-radius: 50%;
+        }
+        .smallerLogo{
+          height: 60px;
+          width: 60px;
+          top: 0%;
+          transform: translate(0%, 0%);
+          &.is-open{
+           display: none;
+          }
+        }
+      }
+      .cart{
+        img{
+          width: 20px;
+          height: 20px;
+          object-fit: contain;
+        }
+      }
+      }
+      .bottom-section{
+        display: none;
+   
+        &.is-open{
+          @include flex(column,start,start);
+          height: 100%;
+        }
+        ul{
+          margin-top: 70px;
+          @include flex(column,start,start);
+          gap: 40px;
+          list-style-type: none;
+          font-family: "montserrat-regular";
+          font-size: 20px;
+          padding: 0px;
+          transition: all .3s ease-in-out;
+            li{
+              cursor: pointer;
+            }
+        }
+        .info-section{
+          font-family: "montserrat-regular";
+          font-size: 15px;
+          @include flex(column,start,start);
+          gap: 15px;
+          padding-top: 50px;
+        }
+      }
+    }
+  
+    @include responsive(tablet){
+      display: none;
+    }
+    @include responsive(laptop ){
+      display: none;
+    }
+    @include responsive(desktop ){
+      display: none;
+    }
+
+  }
+
+

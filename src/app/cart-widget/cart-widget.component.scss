@@ -6,6 +6,11 @@
     border: 1px solid $footer-background;
     padding: 25px;
     background-color: $page-background-color;
+    @include responsive(smartphone-portrait){
+        border: none;
+        @include mobile-content-width;
+
+    }
     .product{
 @include flex(column,start,start);
 gap: 25px;
@@ -13,6 +18,10 @@ gap: 25px;
     @include flex(column,start,start);
     .section{
         @include flex(row,center,center);
+        @include responsive(smartphone-portrait){
+            @include flex(row,space-between,center);
+            @include mobile-content-width
+        }
         gap: 10px;
         .image{
     background-color: $secondary-color;
@@ -44,6 +53,7 @@ width: 80px;
                     border: 1px solid #E9E9E9;
                     @include flex(row,center,center);
                     cursor: pointer;
+
                 }
             }
           }
@@ -69,6 +79,9 @@ width: 80px;
     font-size: 14px;
     font-family: 'montserrat-bold';
     padding: 25px 0px 25px 0px;
+    @include responsive(smartphone-portrait){
+        @include mobile-content-width
+    }
 }
 
     button{
@@ -80,5 +93,8 @@ width: 80px;
         font-family: 'montserrat-bold';
         font-size: 14px;
         border: none;
+        @include responsive(smartphone-portrait){
+            @include mobile-content-width
+        }
     }
 }

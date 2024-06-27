@@ -1,3 +1,5 @@
+@import '../../styles/styles.scss';
+
 .scroll-to-top{
     position: fixed;
     bottom: 25px;
@@ -18,5 +20,13 @@ img{
     cursor: pointer;
     &:hover{
         opacity: .7;
+    }
+    @include responsive(smartphone-portrait){
+        height: 30px;
+        width: 30px;
+        object-fit: contain;
+        &:hover{
+            opacity: .7;
+        }
     }
 }
