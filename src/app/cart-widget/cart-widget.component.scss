@@ -8,12 +8,21 @@
     background-color: $page-background-color;
     @include responsive(smartphone-portrait){
         border: none;
-        @include mobile-content-width;
-
     }
     .product{
 @include flex(column,start,start);
 gap: 25px;
+@include responsive(smartphone-portrait){
+    @include mobile-content-width
+}
+.back-button{
+    display: none;
+    @include responsive(smartphone-portrait){
+        display: block;
+    }
+    font-size: 13px;
+    font-family: 'montserrat-regular';
+}
 .full-product{
     @include flex(column,start,start);
     .section{

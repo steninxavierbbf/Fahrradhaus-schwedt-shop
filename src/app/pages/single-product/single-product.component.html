@@ -59,9 +59,13 @@
                 </div>
             </div>                  
         </div>
-        <div class="blur" *ngIf="isCLicked && isScrolled"></div>
-         <div class="widget" *ngIf="isCLicked && isScrolled">
-            <app-cart-widget></app-cart-widget>
+        <div class="blur-desktop" *ngIf="isCLicked && isScrolled"></div>
+        <div class="blur-mobile" *ngIf="isCLicked"></div>
+         <div class="widget-desktop" *ngIf="isCLicked && isScrolled">
+            <app-cart-widget ></app-cart-widget>
+         </div>
+         <div class="widget-mobile" *ngIf="isCLicked">
+            <app-cart-widget (onCloseClick)="handleStateChange($event)"></app-cart-widget>
          </div>
         </div>
 

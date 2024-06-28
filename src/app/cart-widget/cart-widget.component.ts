@@ -1,6 +1,7 @@
 import { NgFor } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { RouterLink } from '@angular/router';
+
 
 @Component({
   selector: 'app-cart-widget',
@@ -10,6 +11,8 @@ import { RouterLink } from '@angular/router';
   styleUrl: './cart-widget.component.scss'
 })
 export class CartWidgetComponent {
+  close:boolean=false
+  @Output() onCloseClick = new EventEmitter<boolean>()
   cardImages=[ {"image":"assets/images/small-slider/bike1.png","smallHeading":"RETRO","mainHeading":"BRÜGGE 1.0"},
     {"image":"assets/images/small-slider/bike2.png","smallHeading":"E-TREKKING","mainHeading":"BASEL 2.0"},
     {"image":"assets/images/small-slider/bike3.png","smallHeading":"URBAN","mainHeading":"URBANRIDER 2.0"},
@@ -29,5 +32,8 @@ export class CartWidgetComponent {
     price:"2.399 EUR"
    }
   ]
-
+disableBlur(){
+this.close=true;
+this.onCloseClick.emit(this.close);
+}
 }

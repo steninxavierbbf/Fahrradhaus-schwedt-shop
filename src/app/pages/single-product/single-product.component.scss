@@ -352,15 +352,39 @@ padding: 20px 0px;
 
 
 }
-.widget{
+.widget-desktop{
+  display: block;
   top:21.1%;
   right: 0;
   position: fixed;
   z-index: 0;
+  @include responsive(smartphone-portrait){
+    display: none;
+  }
 
 }
-.blur{
+.widget-mobile{
+  display: none;
+  @include responsive(smartphone-portrait){
+    top:15%;
+    position: fixed;
+    z-index: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+
+}
+.blur-desktop{
   top:21.1%;
+  backdrop-filter: blur(5px);
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+.blur-mobile{
+  top: 0;
   backdrop-filter: blur(5px);
   height: 100%;
   width: 100%;

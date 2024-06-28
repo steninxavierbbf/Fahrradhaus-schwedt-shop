@@ -10,6 +10,10 @@ import { CartWidgetComponent } from "../../cart-widget/cart-widget.component";
     imports: [NgFor, CartWidgetComponent,NgIf]
 })
 export class SingleProductComponent implements OnInit {
+
+  handleStateChange(newState:boolean) {
+  this.isCLicked=!newState
+}
   isCLicked:boolean=false
   isScrolled:boolean=false;
   selectedImage:string=""
