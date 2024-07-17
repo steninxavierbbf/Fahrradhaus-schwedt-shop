@@ -15,11 +15,12 @@
                         <img src="assets/icons/tick.png" alt="tick" *ngIf="openPaymentOption">
                         <div class="text">VERSAND</div>
                     </div>
-                    <div class="right">
+                    <div class="right" *ngIf="!openPaymentOption">
                         <div class="delivery">Versand nach:</div>
                         <div class="place">Deutschland</div>
                         <div class="arrow-down"><img src="assets/icons/down-arrow.png" alt="down-arrow"></div>
                     </div>
+                    <div class="ready" *ngIf="openPaymentOption">Bearbeiten</div>
                  </div>
                  <div class="information-filled" *ngIf="openPaymentOption">
                     <div class="pinformation">
@@ -40,7 +41,7 @@
                                 [(ngModel)]="paymentSection.email" email="true" name="email" (input)="valueSection($event)">
                                 
                             </div>
-                          
+                            <div class="mobile-invalid" *ngIf="!emailCheck">*Email is not valid</div>
                              <div class="input-section">
                                 <label for="">Telefonnummer *</label>
                                 <input type="tel" placeholder="Ihre Telefonnummer" 

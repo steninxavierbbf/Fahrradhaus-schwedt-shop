@@ -7,6 +7,10 @@ import { ShopComponent } from './pages/shop/shop.component';
 import { SingleProductComponent } from './pages/single-product/single-product.component';
 import { CheckoutComponent } from './pages/checkout/checkout.component';
 import { ThankYouPageComponent } from './pages/thank-you-page/thank-you-page.component';
+import { RegistrationComponent } from './pages/registration/registration.component';
+import { LoginComponent } from './login/login.component';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { CartComponent } from './cart/cart.component';
 
 export const routes: Routes = [
     {path:"",component:HomePageComponent},
@@ -16,5 +20,9 @@ export const routes: Routes = [
     {path:"shop",component:ShopComponent},
     {path:"single-product",component:SingleProductComponent},
     {path:"checkout",component:CheckoutComponent},
-    {path:"success",component:ThankYouPageComponent}
+    {path:"success",component:ThankYouPageComponent},
+    {path:"login",component:LoginComponent},
+    {path:"login/registration",component:RegistrationComponent},
+    {path:"login/reset-password",component:ForgotPasswordComponent},
+    {path:"cart",component:CartComponent}
 ];

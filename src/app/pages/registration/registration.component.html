@@ -1,0 +1,33 @@
+<div class="main-container">
+  <div class="sub-container">
+  <form (ngSubmit)="registration()" #registrationForm="ngForm">
+    <label for="name">Name</label>
+    <input type="name" name="name" placeholder="Write your name" [(ngModel)]="registrationFormDetails.name"/>
+    <label for="name">Email</label>
+  <input type="email" name="email" placeholder="Enter your email Id" [(ngModel)]="registrationFormDetails.email" (input)="valueSection($event)">
+  <div class="invalid" *ngIf="!emailCheck">*Email is not valid</div>
+  <label for="name">Username</label>
+  <input type="text" name="username" placeholder="Enter the username" [(ngModel)]="registrationFormDetails.username">
+  <label for="name">Password</label>
+  <input type="{{showPassword? 'text' : 'password'}}" name="password" placeholder="Enter your password" [(ngModel)]="registrationFormDetails.password">
+  <div class="invalid" *ngIf="!passwordError">*Password should pass conditions below </div>
+  <div class="toggle"> 
+    <input type="checkbox" (click)="togglePassword()" class="checkbox">
+    <div class="pass">Show Password</div>
+</div>
+  <div class="conditions">
+    At least 8 characters.<br/>
+    It should contain at least one uppercase letter.<br/>
+    It should contain at least one lowercase letter.<br/>
+    It should contain at least one number.<br/>
+    It should contain at least one special character (e.g., !, &#64;, #, $).</div>
+    <div class="message" *ngIf="message">{{message}}</div>
+    <div class="message" *ngIf="userExists">{{userExists}}</div>
+  <button type="submit">SIGN UP</button>
+</form>
+
+
+</div>
+</div>
+
+

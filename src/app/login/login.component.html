@@ -1,0 +1,17 @@
+<div class="main-container">
+    <form (ngSubmit)="getUserDetailsViaJwt()" #loginForm="ngForm">
+        <label for="email">Email</label>
+        <input type="text" name="email" placeholder="Enter your email id" [(ngModel)]="loginDetails.email"/>
+        <label for="password">Password</label>
+        <input type="{{showPassword? 'text' : 'password'}}" name="password" placeholder="Enter your password" [(ngModel)]="loginDetails.password"/>
+        <div class="toggle"> 
+            <input type="checkbox" (click)="togglePassword()" class="checkbox">
+            <div class="pass">Show Password</div>
+        </div>
+        <button type="submit">LOGIN</button>
+
+    </form>
+    <div class="forget-password" routerLink="reset-password">Forgot your password?</div>
+    <div class="message" *ngIf="message">{{message}}</div>
+    <div class="signup-section" routerLink="registration">SIGN UP</div>
+</div>

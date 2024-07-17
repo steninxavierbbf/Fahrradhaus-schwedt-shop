@@ -97,10 +97,13 @@
     <div class="highlight-section">
         <div class="highlight-headline">HIGHLIGHTS IM MAI</div>
         <div class="bike-display-section">
-            <div class="card" *ngFor="let bike of cardImages" [routerLink]="['/single-product']">
-                <img src={{bike.image}} alt="">
-                <div class="small-heading">{{bike.smallHeading}}</div>
-                <div class="main-heading">{{bike.mainHeading}}</div>
+            <div class="card" *ngFor="let bike of cardImagesList"  
+       >
+            <div class="card"      (click)="addToCart(bike.id)">
+                <img src={{bike.images[0].src}} alt="">
+                <div class="small-heading">{{bike.price}} €</div>
+                <div class="main-heading">{{bike.name}}</div>
+            </div>
             </div>
         </div>
     </div>

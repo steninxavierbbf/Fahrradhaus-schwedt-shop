@@ -1,6 +1,9 @@
 import { NgFor, NgIf } from '@angular/common';
 import { Component, HostListener, OnInit } from '@angular/core';
 import { CartWidgetComponent } from "../../cart-widget/cart-widget.component";
+import { CartServices } from '../../shared/services/cart.service';
+import { LoginService } from '../../shared/services/login.service';
+import { LocalstorageUserDataService } from '../../shared/services/localstorage-user.service';
 
 @Component({
     selector: 'app-single-product',
@@ -10,7 +13,7 @@ import { CartWidgetComponent } from "../../cart-widget/cart-widget.component";
     imports: [NgFor, CartWidgetComponent,NgIf]
 })
 export class SingleProductComponent implements OnInit {
-
+constructor(private cart:CartServices,private login: LoginService,private local:LocalstorageUserDataService){}
   handleStateChange(newState:boolean) {
   this.isCLicked=!newState
 }
@@ -19,10 +22,13 @@ export class SingleProductComponent implements OnInit {
   selectedImage:string=""
   ngOnInit(): void {
     window.scrollTo(0,0);
+ 
   }
   
   cartSection(){
-  this.isCLicked=true
+  // this.isCLicked=true
+   this.cart.cartItemsCount.update((item)=>item=false)
+   window.location.reload()
   }
   properties=[{
     key:"Farbe",

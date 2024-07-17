@@ -1,0 +1,71 @@
+@import '../../styles/styles.scss';
+.main-container{
+    min-height: calc(100vh - 120px);
+    padding: 180px 0px 50px 0px;
+    @include flex(column,center,center);
+    gap: 40px;
+    form{
+   @include flex(column,start,start);
+gap: 40px;
+ input{
+    height: 30px;
+    width: 270px;
+    padding: 10px;
+    &::placeholder{
+     font-size: 13px;
+     font-family: 'montserrat-regular';
+ }
+
+ }
+
+ button{
+    background-color: $brand-color;
+    border: none;
+    height: 42px;
+    width: 290px;
+   font-size: 14px;
+   font-family: 'montserrat-bold';
+   color: $secondary-color;
+   cursor: pointer;
+ }
+ label{
+    font-size: 14px;
+    font-family: 'montserrat-bold';
+  }
+  .toggle{
+    @include flex(row,center,center);
+    gap: 10px;
+    .pass{
+        font-size: 14px;
+        font-family: 'montserrat-bold';
+      }
+      .checkbox{
+        width: 20px;
+        height: 20px;
+        padding: 10px;
+     }
+  }
+
+    }
+    .forget-password{
+        font-size: 14px;
+        font-family: 'montserrat-bold';
+        cursor: pointer;
+    }
+    .message{
+        font-size: 14px;
+        font-family: 'montserrat-bold';
+        color: $brand-color;
+    }
+    .signup-section{
+        background-color: $brand-color;
+        border: none;
+        height: 42px;
+        width: 290px;
+       font-size: 14px;
+       font-family: 'montserrat-bold';
+       color: $secondary-color;
+       cursor: pointer;
+       @include flex(row,center,center)
+      }
+}

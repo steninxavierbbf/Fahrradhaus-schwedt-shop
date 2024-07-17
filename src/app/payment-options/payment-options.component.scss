@@ -30,6 +30,10 @@ background-color: $secondary-color;
 padding: 15px 30px;
 position: relative;
 width: 100%;
+@include responsive(smartphone-portrait){
+    padding: 0px;
+
+}
 .notCompleted{
      @include flex(row,start,center);
 }
@@ -37,7 +41,10 @@ width: 100%;
     @include flex(row,start,center);
     gap: 8px;
     font-family: 'montserrat-bold';
- 
+    @include responsive(smartphone-portrait){
+        padding: 20px;
+     
+    }
     .circle{
    height:32px;
    width: 32px;
@@ -63,6 +70,10 @@ width: 100%;
     padding: 25px;
     @include flex(row,start,start);
     gap: 15px;
+    @include responsive(smartphone-portrait){
+        margin: 20px;
+        padding: 15px;
+    }
     .radio-button{
         margin-top: 10px;
         input[type="radio"]{
@@ -104,6 +115,9 @@ width: 100%;
                 font-size: 13px;
                 font-family: 'montserrat-regular';
                 color: $brand-color;
+                @include responsive(smartphone-portrait){
+                    margin-left: -13%;
+                }
             }
             
             .card-number{
@@ -112,11 +126,19 @@ width: 100%;
                 width: 369px;
                 @include input-label;
                 transition: all .2s ease-in-out;
+                @include responsive(smartphone-portrait){
+                    width: 210px;
+                    margin-left: -13%;
+                }
             }
             .expiry-and-cvv{
                 width: 369px;
                 @include flex(row,space-between,center);
                 gap: 25px;
+                @include responsive(smartphone-portrait){
+                    width: 210px;
+                    margin-left: -13%;
+                }
                 .expiry{
                     @include flex(column,start,start);
                     gap: 12px;
@@ -143,6 +165,10 @@ width: 100%;
     padding: 25px;
     @include flex(row,start,center);
     gap: 15px;
+    @include responsive(smartphone-portrait){
+        margin: 20px;
+        padding: 15px;
+    }
     .radio-button{
         margin-top: 8px;
         input[type="radio"]{
@@ -192,6 +218,10 @@ width: 100%;
         &:hover{
             transform: scaleY(1.1);
         }
+        @include responsive(smartphone-portrait){
+            margin: 20px;
+        }
     }
+
 }
 }

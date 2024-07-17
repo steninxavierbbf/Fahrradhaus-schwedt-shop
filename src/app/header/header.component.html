@@ -13,11 +13,25 @@
 
         </div>
         <div class="icons">
-            <img src="assets/icons/shopping_cart_icon.png" alt="cart" [routerLink]="['checkout']">
-            <img src="assets/icons/search_icon.png" alt="search">
+            <div class="cart">
+                <img src="assets/icons/shopping_cart_icon.png" alt="cart" [routerLink]="['cart']" *ngIf="userName">
+                <div class="quantity" *ngIf="userName">{{countArray?.length}}</div>
+            </div>
+            <img src="assets/icons/user.png" alt="user" routerLink="login" *ngIf="!userName">
+ 
+             <div class="logout">
+                <img src="assets/icons/user.png" alt="user" *ngIf="userName" (click)="activeLogout()">
+                <div class="logoutmenu" [class.logoutActive]="isLogoutActive" (click)="logoutAccount()" *ngIf="userName">Logout</div>
+             </div>
         </div>
     </div>
-
+    <div class="user">
+        <div class="welcome"  *ngIf="userName">Welcome !</div>
+        <div class="name">
+            {{userName}}
+        </div>        
+    </div>
+  
 </nav>
 
 <div class="mobile-menu" [class.height-full]="isMenuOpen">
@@ -36,7 +50,14 @@
                 <li [routerLink]="['fahrradverleih']" routerLinkActive="active" (click)="closeMenu()">FAHRRADVERLEIH</li>
                 <li [routerLink]="['service-leistungen']" routerLinkActive="active" (click)="closeMenu()">SERVICE & LEISTUNGEN</li>
                 <li [routerLink]="['uber-uns']" routerLinkActive="active" (click)="closeMenu()">ÜBER UNS</li>
-                <li [routerLink]="['shop']" routerLinkActive="active" (click)="closeMenu()">SHOP</li>
+                <li [routerLink]="['shop']" routerLinkActive="active" (click)="closeMenu()"> SHOP</li>
+                <!-- <div class="shop-section">
+                    
+                        <div class="sub-menu">E-Bikes</div>
+                        <div class="sub-menu">Bikes</div>
+                        <div class="sub-menu">Teile & Zubehör</div>
+                    
+                </div> -->
                 <li [routerLink]="['termin-buchen']" routerLinkActive="active" (click)="closeMenu()">TERMIN BUCHEN</li>
             </ul>
             <div class="info-section">

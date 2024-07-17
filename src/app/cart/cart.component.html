@@ -1,0 +1,29 @@
+<div class="main-container">
+    <div class="products" *ngFor="let item of cartArray">
+<div class="single"  >
+    <div class="productImage">
+        <img src={{item?.line_items[0]?.image.src}} alt="image">
+    </div>
+    <div class="name">{{item.line_items[0]?.name}}</div>
+    <div class="decrement" (click)="decrement(item?.id,item.line_items[0]?.id,item.line_items[0]?.quantity,item.line_items[0]?.price)">-</div>
+    <div class="quantity">{{item.line_items[0]?.quantity}}</div>
+    <div class="increment"  (click)="increment(item.id,item.line_items[0].id,item.line_items[0]?.quantity,item.line_items[0]?.price)">+</div>
+    <div class="price">{{item.line_items[0]?.price}} €</div>
+    <div class="total">{{item.line_items[0]?.total}} €</div>
+ <div class="delete"><img src="assets/icons/delete.png" alt="delete" (click)="deleteItem(item.id)"></div>
+
+
+</div>
+
+    </div>
+    <div class="no-products" *ngIf="cartArray?.length === 0">
+        <div class="text">No Products in the cart.</div>
+            <button [routerLink]="['/shop']">Keep Shopping</button>  
+    </div>
+    <div class="total-price" *ngIf="cartArray?.length !== 0">
+        <div class="total-price">TOTAL :  {{grandTotal}}.00 €</div>
+
+      <button [routerLink]="['/checkout']">Checkout</button>
+        </div>
+        
+</div>

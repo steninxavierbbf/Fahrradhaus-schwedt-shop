@@ -8,6 +8,8 @@ import { HomeSmallSliderComponent } from "../../home-small-slider/home-small-sli
 import { HomepageAboutComponent } from "../../homepage-about/homepage-about.component";
 import { ScrollToTopComponent } from "../../scroll-to-top/scroll-to-top.component";
 import { MobileLineDividerComponent } from "../../mobile-line-divider/mobile-line-divider.component";
+import { CartServices } from '../../shared/services/cart.service';
+import { LoginService } from '../../shared/services/login.service';
 
 @Component({
     selector: 'app-home-page',
@@ -18,8 +20,18 @@ import { MobileLineDividerComponent } from "../../mobile-line-divider/mobile-lin
 })
 export class HomePageComponent implements OnInit {
 
+userId= localStorage.getItem('id')
+constructor(private cart:CartServices, private login:LoginService){}
+
     ngOnInit(): void {
         window.scrollTo(0,0)
+        // this.cart.getCartItems(this.userId).subscribe((item:any)=>{
+        //     const array= JSON.stringify(item)
+        //     localStorage.setItem('cart',array)
+        // }
+  
+        //     )
+
     }
 
 }

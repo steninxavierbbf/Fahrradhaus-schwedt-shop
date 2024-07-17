@@ -32,6 +32,18 @@
             padding: 40px 0px; 
         
         }
+     .main-image{
+        display:none;
+        @include responsive(smartphone-portrait){
+            display: block;
+            padding-bottom: 40px;
+            img{
+                height: 214px;
+                @include mobile-content-width;
+                object-fit: contain;
+            }
+        }
+     }
         .headline{
             font-family: 'montserrat-bold';
             font-size: 45px;

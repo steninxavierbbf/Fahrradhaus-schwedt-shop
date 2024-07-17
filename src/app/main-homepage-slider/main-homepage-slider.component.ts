@@ -17,13 +17,15 @@ export class MainHomepageSliderComponent implements OnInit , OnDestroy {
   const isLastSlide= this.currentIndex === this.images.length - 1;
   const newIndex= isLastSlide ? 0 : this.currentIndex + 1;
   this.currentIndex = newIndex
-  console.log(this.currentIndex)
+ this.resetTimer()
+ this.startTimer()
     }
     nextImage(){
   const isFirstSlide =  this.currentIndex === 0;
   const newIndex = isFirstSlide ? this.images.length - 1 : this.currentIndex - 1;
   this.currentIndex = newIndex;
-  console.log(this.currentIndex)
+ this.resetTimer()
+ this.startTimer()
     }
     getCurrentSliderUrl():string{
       return this.images[this.currentIndex]
@@ -38,5 +40,16 @@ export class MainHomepageSliderComponent implements OnInit , OnDestroy {
     if(this.timer){
   clearInterval(this.timer)
     }
+    }
+    resetTimer(){
+      if(this.timer){
+        clearInterval(this.timer)
+          }
+    }
+    startTimer() {
+      this.timer=setInterval(()=>{
+        const nextIndex= (this.currentIndex+1) % this.images.length
+        this.currentIndex=nextIndex
+        },6000)
     }
 }

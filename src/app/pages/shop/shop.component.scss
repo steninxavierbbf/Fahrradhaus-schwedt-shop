@@ -305,6 +305,7 @@ left: 26%;
             @include responsive(smartphone-portrait){
                 gap: 50px;
                 padding-top: 70px;
+                @include mobile-content-width;
             }
             .highlight-headline{
           font-size: 45px;
